@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	 * The control provides a field that allows end users to an entry out of a list of pre-defined items. The choosable items can be provided in the form of complete list boxes or single list items.
 	 * Binding (see DataBinding) is also supported for list items.
 	 * @extends sap.ui.commons.ComboBox
-	 * @version 1.26.3
+	 * @version 1.26.4
 	 *
 	 * @constructor
 	 * @public
@@ -418,6 +418,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 		if (!this.mobile && this.getEnabled && this.getEnabled() && this.getEditable()) {
 			if (this.oPopup && this.oPopup.isOpen()) {
 				this._close();
+				this._doSelect();
 			} else if (!this._F4ForClose) {
 				this._open();
 			}
@@ -427,28 +428,13 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 
 	};
 
-	/**
-	 * Handle mouseup event
-	 * @param {jQuery.Event} oEvent the occuring event
-	 * @protected
-	 */
-	DropdownBox.prototype.onmouseup = function(oEvent) {
-		if (oEvent.target == this.getF4ButtonDomRef() || this.mobile) {
-			return;
-		}
-
-		this._doSelect();
-		oEvent.preventDefault();
-
-	};
-
 	DropdownBox.prototype.onmousedown = function(oEvent){
 
 		if (!this.getEnabled() || !this.getEditable()) {
 			return;
 		}
 
-		// DropdownBox opens and closes on cleck on F4-Button and on input field
+		// DropdownBox opens and closes on click on F4-Button and on input field
 		if (this.oPopup && this.oPopup.isOpen()) {
 			this._F4ForClose = true;
 		} else {
@@ -1544,7 +1530,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	DropdownBox.prototype.checkValueInItems = function() {
 
 		var sValue = this.getValue();
-		var aItems = this.getItems();
+		var aItems = ComboBox.prototype.getItems.apply(this); // use real items, even if popup is open (without filter....)
 		// save and restore wanted item
 		var sWantedSelectedKey = this._sWantedSelectedKey;
 		var sWantedSelectedItemId = this._sWantedSelectedItemId;
