@@ -865,8 +865,9 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: hidden;
   outline: none;
+  /* otherwise the dialog could me made too small by the user */
+  min-height: 140px;
 }
 /* header */
 .sapUiDlgHdr {
@@ -2416,10 +2417,10 @@ span.sapUiLblIco {
   background-color: #7a5100;
 }
 .sapUiMltBgFill2 {
-  background-color: #7a5100;
+  background-color: #000000;
 }
 .sapUiMltBgFill3 {
-  background-color: #7a5100;
+  background-color: #000000;
 }
 .sapUiMltBgHeader {
   background-color: #7a5100;
@@ -3823,11 +3824,11 @@ Three possible designs with corresponding CSS classes:
   border-color: #ffffff;
 }
 .sapUiRrDesignStandard > .sapUiRrStb {
-  background-color: #7a5100;
+  background-color: #000000;
   border-color: #ffffff;
 }
 .sapUiRrDesignStandard > .sapUiRrFtr {
-  background-color: #7a5100;
+  background-color: #000000;
   border-color: #ffffff;
 }
 .sapUiRrDesignStandard > .sapUiRrBody {
@@ -4368,16 +4369,16 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
 }
 /* need to be separate statements for each browser, otherwise it will not work */
 .sapUiTfPlace {
-  color: #d3d3d3;
+  color: #ffffff;
 }
 .sapUiTf::-webkit-input-placeholder {
-  color: #d3d3d3;
+  color: #ffffff;
 }
 .sapUiTf::-moz-placeholder {
-  color: #d3d3d3;
+  color: #ffffff;
 }
 .sapUiTf:-ms-input-placeholder {
-  color: #d3d3d3;
+  color: #ffffff;
 }
 .sapUiTv {
   font-family: Arial, Helvetica, sans-serif;
@@ -4536,7 +4537,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
   background-color: transparent;
 }
 .sapUiTbDesignStandard {
-  background-color: #7a5100;
+  background-color: #000000;
 }
 /* ToolBar items CONTainer (the outer one, sapUiTbInner is the inner one...) 
    This one is required for the borders, as setting them outside would e.g. invalidate width settings. */
@@ -4930,7 +4931,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTreeNode {
   display: inline-block;
   font-size: 16px;
   text-align: center;
-  color: #a9a9a9;
+  color: #ffffff;
   cursor: default;
 }
 .sapUiTfCombo > .sapUiTfValueHelpDsblIcon,
@@ -4965,6 +4966,20 @@ html[data-sap-ui-browser="ie8"] .sapUiTreeNode {
 /* modal, bubble, bottom, top */
 /* modal, bubble, bottom, top */
 /* Toolbar Separator */
+/* ------------------------------------------------------------------- */
+/* Generic Mapping: not for usage in standard control development !!!! */
+/* ------------------------------------------------------------------- */
+/* Semantic Text Colors */
+/* Semantic Element Colors */
+/* Semantic Backgrounds */
+/* Background Brand */
+/* Text Colors */
+/* Border Colors */
+/* @sapUiLightBorder: @sapHCStandardFG; */
+/* @sapUiExtraLightBorder: @sapHCStandardFG; */
+/* Accent */
+/* Backgrounds Header/Footer */
+/* Background */
 /* ===================================================== */
 /* CSS for control sap.ui.commons.AbsoluteLayout.control */
 /* SAP-HCB Theme                                         */
@@ -6032,6 +6047,12 @@ html[data-sap-ui-browser^="ie"] .sapUiRb:focus:after {
 .sapUiRrBody {
   font-size: 11px;
 }
+.sapUiRrDesignStandard > .sapUiRrStb {
+  background-color: #7a5100;
+}
+.sapUiRrDesignStandard > .sapUiRrFtr {
+  background-color: #7a5100;
+}
 /** Common Design **/
 /** Standard Design **/
 /** Transparent Design **/
@@ -6913,5 +6934,5 @@ must be re-inverted */
 }
 .sapUiTfCombo.sapUiTfRo > span.sapUiTfValueHelpIcon,
 .sapUiTfCombo.sapUiTfRo > span.sapUiTfValueHelpIcon:hover {
-  color: #d3d3d3;
+  color: #ffffff;
 }
