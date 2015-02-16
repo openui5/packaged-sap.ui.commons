@@ -25,7 +25,7 @@ sap.ui.define(['jquery.sap.global', './Menu', './MenuItem', './MenuItemBase', '.
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.6
+	 * @version 1.26.7
 	 *
 	 * @constructor
 	 * @public
