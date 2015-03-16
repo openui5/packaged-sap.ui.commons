@@ -20,14 +20,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 	 * @namespace
 	 * @name sap.ui.commons
 	 * @author SAP SE
-	 * @version 1.28.1
+	 * @version 1.28.2
 	 * @public
 	 */
 	
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
 		name : "sap.ui.commons",
-		version: "1.28.1",
+		version: "1.28.2",
 		dependencies : ["sap.ui.core","sap.ui.layout"],
 		types: [
 			"sap.ui.commons.ButtonStyle",
@@ -1227,6 +1227,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 		createImage: function(mConfig){
 			return new sap.ui.commons.Image(mConfig);
 		},
+		addTableClass: function() { return "sapUiTableCommons"; },
 		bFinal: false /* to allow mobile to overwrite  */
 	});
 
