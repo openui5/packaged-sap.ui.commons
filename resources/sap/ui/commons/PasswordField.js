@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library'],
 	 * @extends sap.ui.commons.TextField
 	 *
 	 * @author SAP SE
-	 * @version 1.26.8
+	 * @version 1.26.9
 	 *
 	 * @constructor
 	 * @public

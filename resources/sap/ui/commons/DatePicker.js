@@ -24,7 +24,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/model/ty
 	 * @extends sap.ui.commons.TextField
 	 *
 	 * @author SAP SE
-	 * @version 1.26.8
+	 * @version 1.26.9
 	 *
 	 * @constructor
 	 * @public
@@ -88,6 +88,8 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/model/ty
 		};
 
 		DatePicker.prototype.onAfterRendering = function() {
+
+			TextField.prototype.onAfterRendering.apply(this, arguments);
 
 			if (this._bMobile) {
 				// convert output to mobile format
