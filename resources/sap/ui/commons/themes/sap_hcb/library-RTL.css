@@ -5936,7 +5936,7 @@ html[data-sap-ui-browser^="ie"] .sapUiRb:focus:after {
 .sapUiRating:focus {
   outline-width: 3px;
   outline-style: solid;
-  outline-color: invert;
+  outline-color: #ffffff;
 }
 /* ================================================== */
 /* CSS for control sap.ui.commons/RichTooltip.control */
