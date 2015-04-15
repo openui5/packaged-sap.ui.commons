@@ -2424,6 +2424,30 @@ span.sapUiLblIco {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* HAlign */
+.sapUiMltCellHAlignCenter {
+  text-align: center;
+}
+.sapUiMltCellHAlignLeft {
+  text-align: left;
+}
+.sapUiMltCellHAlignRight {
+  text-align: right;
+}
+.sapUiMltCellHAlignCenter > * {
+  margin-right: auto;
+  margin-left: auto;
+}
+.sapUiMltCellHAlignLeft > *,
+html[dir=rtl] .sapUiMltCellHAlignRight > * {
+  margin-left: auto;
+  margin-right: 0;
+}
+.sapUiMltCellHAlignRight > *,
+html[dir=rtl] .sapUiMltCellHAlignLeft > * {
+  margin-right: auto;
+  margin-left: 0;
+}
 /* BackGround design */
 .sapUiMltBgBorder {
   background-color: #ffffff;
