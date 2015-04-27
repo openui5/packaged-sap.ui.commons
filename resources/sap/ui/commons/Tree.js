@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @class
 	 * Simple tree to display item in a hierarchical way
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.4
+	 * @version 1.28.5
 	 *
 	 * @constructor
 	 * @public
@@ -174,8 +174,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @private
 	 */
 	Tree.prototype.onThemeChanged = function(){
-		this.oCollapseAllButton.setIcon(this.getIconPrefix() + "CollapseAll.png");
-		this.oExpandAllButton.setIcon(this.getIconPrefix() + "ExpandAll.png");
+		if (this.oCollapseAllButton && this.oExpandAllButton) {
+			this.oCollapseAllButton.setIcon(this.getIconPrefix() + "CollapseAll.png");
+			this.oExpandAllButton.setIcon(this.getIconPrefix() + "ExpandAll.png");
+		}
 	};
 
 	/** Handler for "Expand All" button.
