@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
      * @implements sap.ui.core.PopupInterface
      *
      * @author SAP SE
-     * @version 1.28.5
+     * @version 1.28.6
      *
      * @constructor
      * @public
@@ -691,6 +691,17 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
       };
     };
 
+    // store the original invalidate function
+    Dialog.prototype.forceInvalidate = Control.prototype.invalidate;
+
+    // stop propagating the invalidate to static UIArea before dialog is opened.
+    // otherwise the open animation can't be seen
+    // dialog will be rendered directly to static ui area when the open method is called.
+    Dialog.prototype.invalidate = function(oOrigin) {
+      if (this.oPopup && (this.oPopup.eOpenState !== "CLOSING" || this.isOpen())) {
+        this.forceInvalidate(oOrigin);
+      }
+    };
 
     // Implementation of API method isOpen
 

@@ -550,7 +550,7 @@ html[data-sap-ui-browser="sf5"] .sapUiBtnS > .sapUiBtnTxt {
   width: 250%;
 }
 .sapUiCrslHorizontal .sapUiCrslItm {
-  display: inline-block !important;
+  display: inline-block;
   list-style: none;
   padding: 0 5px;
   vertical-align: bottom;
@@ -2409,6 +2409,8 @@ span.sapUiLblIco {
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
+  text-align: initial;
+  /* alignment should not be inherited */
 }
 .sapUiMltCell {
   -moz-box-sizing: border-box;
@@ -4357,6 +4359,8 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
 }
 .sapUiTfFoc {
   background-color: #ffffff;
+  outline: none;
+  /* hide e.g. chrome focus outline */
 }
 .sapUiTfBrd.sapUiTfFoc {
   border-color: #969696;

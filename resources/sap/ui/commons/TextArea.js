@@ -18,7 +18,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library'],
 	 * @class
 	 * Control to enter or display multible row text.
 	 * @extends sap.ui.commons.TextField
-	 * @version 1.28.5
+	 * @version 1.28.6
 	 *
 	 * @constructor
 	 * @public
@@ -249,6 +249,35 @@ sap.ui.define(['jquery.sap.global', './TextField', './library'],
 		// don't do a prevent default because we want the default browser behavior...e.g. new line when pressing enter in the text area.
 		oEvent.stopPropagation();
 	};
+
+	TextArea.prototype.onsapnext = function(oEvent) {
+
+		if (jQuery(this.getFocusDomRef()).data("sap.InNavArea") && oEvent.keyCode != jQuery.sap.KeyCodes.END) {
+			// parent handles arrow navigation
+			oEvent.preventDefault();
+			return;
+		}
+
+		this._checkCursorPosForNav(oEvent, true);
+
+	};
+
+	TextArea.prototype.onsapprevious = function(oEvent) {
+
+		if (jQuery(this.getFocusDomRef()).data("sap.InNavArea") && oEvent.keyCode != jQuery.sap.KeyCodes.HOME) {
+			// parent handles arrow navigation
+			oEvent.preventDefault();
+			return;
+		}
+
+		this._checkCursorPosForNav(oEvent, false);
+
+	};
+
+	TextArea.prototype.onsapnextmodifiers = TextArea.prototype.onsapnext;
+	TextArea.prototype.onsappreviousmodifiers = TextArea.prototype.onsapprevious;
+	TextArea.prototype.onsapend = TextArea.prototype.onsapnext;
+	TextArea.prototype.onsaphome = TextArea.prototype.onsapprevious;
 
 	/**
 	 * Event handler called on Mouse up

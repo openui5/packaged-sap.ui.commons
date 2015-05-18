@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @class
 	 * Simple tree to display item in a hierarchical way
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.5
+	 * @version 1.28.6
 	 *
 	 * @constructor
 	 * @public
@@ -563,6 +563,19 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 			}
 		});
 	};
+	
+	/**
+	 * Determine the binding context of the given node (dependent on the model name used
+	 * for the nodes binding)
+	 * 
+	 * @param {sap.ui.commons.TreeNode} oNode
+	 * @private
+	 */
+	Tree.prototype.getNodeContext = function(oNode) {
+		var oBindingInfo = this.getBindingInfo("nodes"),
+			sModelName = oBindingInfo && oBindingInfo.model;
+		return oNode.getBindingContext(sModelName);
+	};
 
 	/**
 	 * Returns the node with the given context, or null if no such node currently exists
@@ -572,8 +585,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @since 1.19
 	 */
 	Tree.prototype.getNodeByContext = function(oContext){
+		var oBindingInfo = this.getBindingInfo("nodes"),
+			sModelName = oBindingInfo && oBindingInfo.model;
 		return this.findNode(this, function(oNode) {
-			return oNode.getBindingContext() == oContext;
+			return oNode.getBindingContext(sModelName) == oContext;
 		});
 	};
 
@@ -627,7 +642,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	Tree.prototype.setSelection = function(oNode, bSuppressEvent, sType, bDeselectOtherNodes){
 		var bDoSelect = true;
 		if (!bSuppressEvent) {
-			bDoSelect = this.fireSelect({node: oNode, nodeContext: oNode && oNode.getBindingContext()});
+			bDoSelect = this.fireSelect({node: oNode, nodeContext: this.getNodeContext(oNode)});
 		}
 
 		if (bDoSelect) {
@@ -697,6 +712,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 					case sap.ui.commons.TreeSelectionMode.Legacy:
 						if (jQuery.isEmptyObject(that.mSelectedNodes)) {
 							that.mSelectedNodes[oNode.getId()] = oNode;
+							that.mSelectedContexts[oNode.getId()] = that.getNodeContext(oNode);
 						}
 						break;
 					case sap.ui.commons.TreeSelectionMode.Single:
@@ -705,6 +721,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 							oNode.setIsSelected(false);
 						} else {
 							that.mSelectedNodes[oNode.getId()] = oNode;
+							that.mSelectedContexts[oNode.getId()] = that.getNodeContext(oNode);
 						}
 						break;
 					case sap.ui.commons.TreeSelectionMode.Multi:
@@ -713,6 +730,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 							oNode.setIsSelected(false);
 						} else {
 							that.mSelectedNodes[oNode.getId()] = oNode;
+							that.mSelectedContexts[oNode.getId()] = that.getNodeContext(oNode);
 						}
 						break;
 				}
@@ -729,7 +747,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	};
 
 	Tree.prototype._setSelectedNode = function(oNode, bSuppressEvent) {
-		var that = this;
+		var that = this, 
+			oContext = this.getNodeContext(oNode);
 
 		jQuery.each(this.mSelectedNodes, function(sId, oNode){
 			that._delMultiSelection(oNode, bSuppressEvent);
@@ -737,10 +756,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 
 		oNode._select(bSuppressEvent, true);
 		this.mSelectedNodes[oNode.getId()] = oNode;
-		this.mSelectedContexts[oNode.getId()] = oNode && oNode.getBindingContext();
+		this.mSelectedContexts[oNode.getId()] = oContext;
 		this.oLeadSelection = oNode;
 		if (!bSuppressEvent) {
-			this.fireSelectionChange({nodes: [oNode], nodeContexts: [oNode && oNode.getBindingContext()]});
+			this.fireSelectionChange({nodes: [oNode], nodeContexts: [oContext]});
 		}
 	};
 
@@ -839,7 +858,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 		}
 		oSelNode._select(bSuppressEvent);
 		this.mSelectedNodes[oSelNode.getId()] = oSelNode;
-		this.mSelectedContexts[oSelNode.getId()] = oSelNode.getBindingContext();
+		this.mSelectedContexts[oSelNode.getId()] = this.getNodeContext(oSelNode);
 	};
 
 	Tree.prototype._delMultiSelection = function(oSelNode, bSuppressEvent) {
