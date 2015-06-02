@@ -4542,7 +4542,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
 }
 /**
  * All Toolbar items are arranged in a flow layout. Once there are too many items to display, some flow into the second row
- * which is not visible. 
+ * which is not visible.
  */
 .sapUiTb {
   height: 26px;
@@ -4563,7 +4563,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
 .sapUiTbDesignStandard {
   background-color: #a9a9a9;
 }
-/* ToolBar items CONTainer (the outer one, sapUiTbInner is the inner one...) 
+/* ToolBar items CONTainer (the outer one, sapUiTbInner is the inner one...)
    This one is required for the borders, as setting them outside would e.g. invalidate width settings. */
 .sapUiTbCont {
   height: 22px;
@@ -4649,7 +4649,6 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
   /* is only made visible after moved to the right position; not setting top:0 causes flashing scrollbars */
   display: none;
   width: 222px;
-  /* TODO what is a good width here? */
 }
 .sapUiTbDD > div {
   border-width: 1px;
