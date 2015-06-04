@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'jquery.
 	 * @class
 	 * Allows to use a limited set of HTML tags for display
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.8
+	 * @version 1.28.9
 	 *
 	 * @constructor
 	 * @public
