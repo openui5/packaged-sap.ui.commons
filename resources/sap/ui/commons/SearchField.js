@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.28.9
+	 * @version 1.28.10
 	 *
 	 * @constructor
 	 * @public
@@ -779,7 +779,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 					return;
 				}
 				
-				if (sVal == $Input.getSelectedText()) {
+				if (sVal && sVal == $Input.getSelectedText()) {
 					// When pressing Ctrl+A quite fast a keyup event for "A" is triggered without oEvent.ctrlKey flag.
 					// But it behaves like Ctrl+A (Text is marked and A is not entered into the field) -> see BCP 1570032167
 					return;

@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 * @implements sap.ui.core.Toolbar
 		 *
 		 * @author SAP SE
-		 * @version 1.28.9
+		 * @version 1.28.10
 		 *
 		 * @constructor
 		 * @public
@@ -326,14 +326,6 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			if (bClearTabStops) {
 				for (var i = iAllItemsBeforeBreak; i < aLeftItemsWithVisibilityTrue.length; i++) {
 					var oDomRef = aLeftItemsWithVisibilityTrue[i].getFocusDomRef();
-					var $Item = jQuery(oDomRef);
-					if (oDomRef && ($Item.attr("tabindex") == "0")) { // set tabindex to -1 only if already set to 0
-						$Item.attr("tabIndex", -1);
-					}
-				}
-
-				for (var i = 0; i < aRightItems.length; i++) {
-					var oDomRef = aRightItems[i].getFocusDomRef();
 					var $Item = jQuery(oDomRef);
 					if (oDomRef && ($Item.attr("tabindex") == "0")) { // set tabindex to -1 only if already set to 0
 						$Item.attr("tabIndex", -1);
