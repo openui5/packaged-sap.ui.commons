@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.28.11
+	 * @version 1.28.12
 	 *
 	 * @constructor
 	 * @public
@@ -775,6 +775,15 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 
 			if (oEvent) {
 				var oKC = jQuery.sap.KeyCodes;
+				if (oEvent.keyCode === oKC.F2) {
+					// toggle action mode
+					var $FocusDomRef = jQuery(this.getFocusDomRef());
+					var bDataInNavArea = $FocusDomRef.data("sap.InNavArea");
+					if (typeof bDataInNavArea === "boolean") {
+						$FocusDomRef.data("sap.InNavArea", !bDataInNavArea);
+					}
+				}
+
 				if (ComboBox._isHotKey(oEvent) || oEvent.keyCode === oKC.F4 && oEvent.which === 0 /* this is the Firefox case and ensures 's' with same charCode is accepted */) {
 					return;
 				}
@@ -790,6 +799,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 					this._triggerValueHelp = true;
 					this._lastKeyIsDel = iKC == oKC.DELETE || iKC == oKC.BACKSPACE;
 				}
+
 			}
 
 			if (this._triggerValueHelp) {
