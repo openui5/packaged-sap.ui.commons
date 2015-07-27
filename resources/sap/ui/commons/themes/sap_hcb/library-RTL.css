@@ -5123,10 +5123,15 @@ html[data-sap-ui-browser="ie8"] .sapUiTreeNode {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   padding: 0 5px 0 4px;
+  color: #ffffff;
 }
 .sapUiBtnS.sapUiBtnLite,
 .sapUiBtnS.sapUiBtnLite > .sapUiBtnTxt {
   text-decoration: underline;
+}
+.sapUiBtnS.sapUiBtnStd.sapUiBtnReject,
+.sapUiBtnS.sapUiBtnStd.sapUiBtnAccept {
+  color: #ffffff;
 }
 html[data-sap-ui-browser^="ie"] .sapUiBtnS {
   line-height: normal;
@@ -5172,6 +5177,64 @@ html[data-sap-ui-browser^="ie"] .sapUiBtnS.sapUiBtnLite.sapUiBtnDsbl:active {
 }
 .sapUiBtn > span.sapUiBtnIco {
   margin-top: -1px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnAct:not(.sapUiBtnIconAndText),
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnAct:not(.sapUiBtnIconAndText),
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnAct:not(.sapUiBtnIconAndText) {
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnDsbl:not(.sapUiBtnIconAndText):active,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnDsbl:not(.sapUiBtnIconAndText):active,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnDsbl:not(.sapUiBtnIconAndText):active {
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconOnly.sapUiBtnAct:active,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconOnly.sapUiBtnAct:active,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconOnly.sapUiBtnAct:active {
+  padding-top: 0;
+  padding-left: 6px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active {
+  padding-top: 0;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active img,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active img,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnNorm.sapUiBtnIconAndText:active img {
+  margin-top: -2px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiBtnAct:active,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiBtnAct:active,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconOnly.sapUiBtnAct:active {
+  padding-top: 0;
+  padding-bottom: 1px;
+  padding-right: 4px;
+  padding-left: 6px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active {
+  padding-top: 0;
+  padding-right: 4px;
+  padding-left: 5px;
+}
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active span,
+html[data-sap-ui-browser^="ie9"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active img,
+html[data-sap-ui-browser^="ie10"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active img,
+html[data-sap-ui-browser^="ie11"] .sapUiBtnS.sapUiBtnLite.sapUiBtnIconAndText:active img {
+  margin-top: -3px;
 }
 /* ============================================== */
 /* CSS for control sap.ui.commons/Callout.control */
@@ -5472,6 +5535,14 @@ html[data-sap-ui-browser="ie8"] .sapUiDlgGrip {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   text-decoration: none;
+  padding-right: 4px;
+  padding-left: 6px;
+}
+html[data-sap-ui-browser^="cr"] .sapUiIpe > .sapUiBtnS.sapUiBtnLite > span,
+html[data-sap-ui-browser^="cr"] .sapUiIpeCont > .sapUiBtnS.sapUiBtnLite > span,
+html[data-sap-ui-browser^="ie"] .sapUiIpe > .sapUiBtnS.sapUiBtnLite > span,
+html[data-sap-ui-browser^="ie"] .sapUiIpeCont > .sapUiBtnS.sapUiBtnLite > span {
+  margin-top: -2px;
 }
 .sapUiIpeEdit > .sapUiBtnS.sapUiBtnLite {
   border-color: #ffffff;
