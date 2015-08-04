@@ -1,10 +1,10 @@
 /*!
- * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * UI development toolkit for HTML5 (OpenUI5)
  * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /*!
- * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * UI development toolkit for HTML5 (OpenUI5)
  * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
@@ -5120,10 +5120,15 @@ html[data-sap-ui-browser="ie8"] .sapUiTreeNode {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   padding: 0 5px 0 4px;
+  color: #ffffff;
 }
 .sapUiBtnS.sapUiBtnLite,
 .sapUiBtnS.sapUiBtnLite > .sapUiBtnTxt {
   text-decoration: underline;
+}
+.sapUiBtnS.sapUiBtnStd.sapUiBtnReject,
+.sapUiBtnS.sapUiBtnStd.sapUiBtnAccept {
+  color: #ffffff;
 }
 html[data-sap-ui-browser^="ie"] .sapUiBtnS {
   line-height: normal;

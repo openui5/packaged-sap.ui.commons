@@ -1,5 +1,5 @@
 /*!
- * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * UI development toolkit for HTML5 (OpenUI5)
  * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
@@ -18,7 +18,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './TextView', './library', 's
 	 * @class
 	 * The InPlaceEdit is a functionality to have text in display mode that can be changed in place.
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.12
+	 * @version 1.28.13
 	 *
 	 * @constructor
 	 * @public
