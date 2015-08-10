@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 * @implements sap.ui.core.Toolbar
 		 *
 		 * @author SAP SE
-		 * @version 1.28.13
+		 * @version 1.28.14
 		 *
 		 * @constructor
 		 * @public
@@ -85,7 +85,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			// Buffer for performance, updated after rendering
 			this.oDomRef = null;
 			this.oInnerRef = null;
+			//reference to the menu button
 			this.oOverflowDomRef = null;
+			//reference to the overflow content
+			this._oOverflowPopup = null;
 		    this.sOriginalStylePropertyWidth = null;
 			this.bHasRightItems = false;
 			this._bRendering = false;
@@ -187,6 +190,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			this.oItemDelegate = undefined;
 			jQuery(window).unbind("resize", this.onwindowresize);
 
+			removeOverflowContentAndPopup.call(this);
 			// No super.exit() to call
 		};
 
@@ -501,7 +505,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		Toolbar.prototype.handleOverflowButtonTriggered = function () {
 			// Initialize the popup
 			if (!this.bPopupInitialized) {
-				this.popup = new Popup(new sap.ui.commons.ToolbarOverflowPopup(this), false, true, true);
+				this._oOverflowPopup = new sap.ui.commons.ToolbarOverflowPopup(this);
+				this.popup = new Popup(this._oOverflowPopup, false, true, true);
 				this.popup.setAutoCloseAreas([this.getId() + "-mn"]);
 				this.bPopupInitialized = true;
 			}
@@ -771,6 +776,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 				sap.ui.core.Element.call(this, sId);
 			},
 
+			exit: function() {
+				this.$().remove();
+			},
+
 			/**
 			 * Initializes the ItemNavigation for this popup and focuses the first item
 			 *
@@ -1001,5 +1010,21 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		}
 
 		return Toolbar;
+
+		/**
+		 * Destroy/Remove overflow menu content that is inside the popup and the popup itself
+		 * @private
+		 */
+		function removeOverflowContentAndPopup() {
+			if (this.bPopupInitialized) {
+				this._oOverflowPopup.destroy();
+				this._oOverflowPopup = null;
+				this.popup.detachOpened(this.handlePopupOpened, this);
+				this.popup.detachClosed(this.handlePopupClosed, this);
+				this.popup.destroy();
+				this.popup = null;
+				this.bPopupInitialized = false;
+			}
+		}
 
 	}, /* bExport= */ true);

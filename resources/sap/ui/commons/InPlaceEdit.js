@@ -18,7 +18,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './TextView', './library', 's
 	 * @class
 	 * The InPlaceEdit is a functionality to have text in display mode that can be changed in place.
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.13
+	 * @version 1.28.14
 	 *
 	 * @constructor
 	 * @public
@@ -299,7 +299,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './TextView', './library', 's
 
 			var oContent = this.getContent();
 
-			if ((oContent.getEditable && !oContent.getEditable()) || (oContent.getEnabled && !oContent.getEnabled())) {
+			if (!oContent || (oContent.getEditable && !oContent.getEditable()) || (oContent.getEnabled && !oContent.getEnabled())) {
 				// readOnly or disabled -> only display mode
 				return false;
 			} else {
