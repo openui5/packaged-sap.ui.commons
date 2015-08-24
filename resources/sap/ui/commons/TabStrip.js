@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.30.6
+	 * @version 1.30.7
 	 *
 	 * @constructor
 	 * @public
@@ -202,6 +202,25 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	};
 
 	/*
+	 * Handles the mouse down event.
+	 * @private
+	 */
+	TabStrip.prototype.onmousedown = function(oEvent) {
+		var oSource = oEvent.target;
+		if (oSource.className == "sapUiTabClose") {
+			oEvent.preventDefault();
+			oEvent.stopPropagation();
+
+			// clear the target so the the
+			// ItemNavigation won't set the focus on this tab.
+			oEvent.target = null;
+
+			return;
+		}
+		this.selectTabByDomRef(oSource);
+	};
+
+	/*
 	 * Handles the click event.
 	 * @private
 	 */
@@ -213,9 +232,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			if (iIdx > -1) {
 				this.fireClose({index:iIdx});
 			}
-			return;
 		}
-		this.selectTabByDomRef(oSource);
 	};
 
 	/*
@@ -567,6 +584,29 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		}
 		jQuery.sap.log.warning("SelectedIndex " + iSelectedIndex + " can not be set", sDetails, "sap.ui.commons.TabStrip");
 
+	};
+
+	TabStrip.prototype._getActualSelectedIndex = function() {
+
+		// check if selected tab exists and is visible and enabled -> otherwise select first active one
+
+		var iSelectedIndex = Math.max(0, this.getSelectedIndex());
+
+		var aTabs = this.getTabs();
+		var oSelectedTab = aTabs[iSelectedIndex];
+		if (oSelectedTab && oSelectedTab.getVisible() && oSelectedTab.getEnabled()) {
+			return iSelectedIndex;
+		}
+
+		for (var i = 0; i < aTabs.length; i++) {
+			var oTab = aTabs[i];
+
+			if (oTab.getVisible() && oTab.getEnabled()) {
+				return i;
+			}
+		}
+
+		return 0;
 	};
 
 
