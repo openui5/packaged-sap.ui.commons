@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Panel', './library'],
 	 * @extends sap.ui.commons.Panel
 	 *
 	 * @author SAP SE
-	 * @version 1.28.16
+	 * @version 1.28.17
 	 *
 	 * @constructor
 	 * @public
@@ -197,6 +197,11 @@ sap.ui.define(['jquery.sap.global', './Panel', './library'],
 		if (!oDomRef || (!bEnabled && jQuery(this.getDomRef()).hasClass("sapUiTabSel")) ||
 			(bEnabled && oParent && oParent.getSelectedIndex && oParent.getSelectedIndex() < 0)) {
 			this.setProperty("enabled", bEnabled, false); // rendering needed
+
+			if (oParent && oParent._getActualSelectedIndex) {
+				var iIndex = oParent._getActualSelectedIndex();
+				oParent.setProperty('selectedIndex', iIndex, true);
+			}
 		} else {
 			this.setProperty("enabled", bEnabled, true); // no re-rendering!
 			// if already rendered, adapt rendered control without complete re-rendering
