@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/core/Ico
 	 * @extends sap.ui.commons.TextField
 	 *
 	 * @author SAP SE
-	 * @version 1.30.7
+	 * @version 1.30.8
 	 *
 	 * @constructor
 	 * @public
@@ -63,14 +63,16 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/core/Ico
 	
 	
 	ValueHelpField.prototype.onBeforeRendering = function(){
+		var sThemeModuleName = "sap.ui.commons.themes." + sap.ui.getCore().getConfiguration().getTheme();
 		var sIcon = Parameters.get('sap.ui.commons.ValueHelpField:sapUiValueHelpIconDsblUrl');
-		this.sIconDsblUrl = jQuery.sap.getModulePath("sap.ui.commons", '/') + "themes/" + sap.ui.getCore().getConfiguration().getTheme() + sIcon;
-	
+
+		this.sIconDsblUrl = jQuery.sap.getModulePath(sThemeModuleName, sIcon);
+
 		sIcon = Parameters.get('sap.ui.commons.ValueHelpField:sapUiValueHelpIconRegularUrl');
-		this.sIconRegularUrl = jQuery.sap.getModulePath("sap.ui.commons", '/') + "themes/" + sap.ui.getCore().getConfiguration().getTheme() + sIcon;
-		
+		this.sIconRegularUrl = jQuery.sap.getModulePath(sThemeModuleName, sIcon);
+
 		sIcon = Parameters.get('sap.ui.commons.ValueHelpField:sapUiValueHelpIconHoverUrl');
-		this.sIconHoverUrl = jQuery.sap.getModulePath("sap.ui.commons", '/') + "themes/" + sap.ui.getCore().getConfiguration().getTheme() + sIcon;
+		this.sIconHoverUrl = jQuery.sap.getModulePath(sThemeModuleName, sIcon);
 	};
 	
 	ValueHelpField.prototype.onmouseover = function (oEvent) {
@@ -82,7 +84,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/core/Ico
 				this.sIconHoverUrl = this.sIconRegularUrl;
 			} else {
 				var sIcon = Parameters.get('sap.ui.commons.ValueHelpField:sapUiValueHelpIconHoverUrl');
-				this.sIconHoverUrl = jQuery.sap.getModulePath("sap.ui.commons", '/') + "themes/" + sap.ui.getCore().getConfiguration().getTheme() + sIcon;
+				this.sIconHoverUrl = jQuery.sap.getModulePath("sap.ui.commons.themes." + sap.ui.getCore().getConfiguration().getTheme(), sIcon);
 			}
 			var oIcon = jQuery.sap.byId(oEvent.target.id);
 			oIcon.attr( 'src', this.sIconHoverUrl );
