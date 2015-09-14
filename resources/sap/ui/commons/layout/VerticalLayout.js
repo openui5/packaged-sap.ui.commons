@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/layout/Ver
 	 * @extends sap.ui.layout.VerticalLayout
 	 *
 	 * @author SAP SE
-	 * @version 1.28.17
+	 * @version 1.28.18
 	 *
 	 * @constructor
 	 * @public

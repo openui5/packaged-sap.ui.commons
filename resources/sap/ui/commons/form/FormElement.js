@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/layout/for
 	 * @extends sap.ui.layout.form.FormElement
 	 *
 	 * @author SAP SE
-	 * @version 1.28.17
+	 * @version 1.28.18
 	 *
 	 * @constructor
 	 * @public

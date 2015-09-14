@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	 * The control provides a field that allows end users to an entry out of a list of pre-defined items.
 	 * The choosable items can be provided in the form of a complete <code>ListBox</code>, single <code>ListItems</code>.
 	 * @extends sap.ui.commons.ComboBox
-	 * @version 1.28.17
+	 * @version 1.28.18
 	 *
 	 * @constructor
 	 * @public
@@ -1060,7 +1060,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 				iPos = iPos - 2;
 			}
 		}
-		this._updatePosInSet( $Ref, iPos, oItem.getAdditionalText());
+		this._updatePosInSet( $Ref, iPos, (oItem.getAdditionalText ? oItem.getAdditionalText() : ""));
 		$Ref.attr("aria-setsize", iSize);
 		$Ref.val(sText);
 		this._sTypedChars = oNewValue;
