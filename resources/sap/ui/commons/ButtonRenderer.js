@@ -12,7 +12,7 @@ sap.ui.define(['jquery.sap.global'],
 
 	/**
 	 * @author SAP SE
-	 * @version 1.32.1
+	 * @version 1.32.2
 	 * @namespace
 	 */
 	var ButtonRenderer = {
@@ -48,7 +48,7 @@ sap.ui.define(['jquery.sap.global'],
 		var sStyle = oButton.getStyle();
 
 		if (sStyle != "" && sStyle != sap.ui.commons.ButtonStyle.Default) {
-			rm.addClass("sapUiBtn" + jQuery.sap.escapeHTML(sStyle));
+			rm.addClass("sapUiBtn" + jQuery.sap.encodeHTML(sStyle));
 		}
 
 		//ARIA

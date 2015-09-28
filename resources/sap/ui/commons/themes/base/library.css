@@ -4560,6 +4560,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
   margin: 0;
   overflow: hidden;
   position: relative;
+  white-space: normal;
 }
 .sapUiTb.sapUiTbStandalone {
   height: 28px;
