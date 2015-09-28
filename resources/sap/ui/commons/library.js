@@ -20,14 +20,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 	 * @namespace
 	 * @name sap.ui.commons
 	 * @author SAP SE
-	 * @version 1.26.13
+	 * @version 1.26.14
 	 * @public
 	 */
 	
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
 		name : "sap.ui.commons",
-		version: "1.26.13",
+		version: "1.26.14",
 		dependencies : ["sap.ui.core","sap.ui.layout"],
 		types: [
 			"sap.ui.commons.ButtonStyle",
