@@ -21,7 +21,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.28.18
+	 * @version 1.28.19
 	 *
 	 * @constructor
 	 * @public
@@ -346,7 +346,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			oEvent.stopPropagation();
 		}
 
-		if (!!!sap.ui.Device.browser.firefox) {
+		if (!sap.ui.Device.browser.firefox) {
 			this._doOnEscape(oEvent);
 		}
 

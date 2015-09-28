@@ -4582,6 +4582,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
   position: relative;
   /* required for IE7 to make overflow:hidden work! */
   padding: 4px 10px 0px 0px;
+  white-space: normal;
 }
 .sapUiTbContLeft.sapUiTbCont {
   float: right;

@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	 * The control provides a field that allows end users to an entry out of a list of pre-defined items.
 	 * The choosable items can be provided in the form of a complete <code>ListBox</code>, single <code>ListItems</code>.
 	 * @extends sap.ui.commons.ComboBox
-	 * @version 1.28.18
+	 * @version 1.28.19
 	 *
 	 * @constructor
 	 * @public
@@ -506,7 +506,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 			this.onkeypress(oEvent);
 		}
 
-		if (!!!sap.ui.Device.browser.internet_explorer || oEvent.which !== jQuery.sap.KeyCodes.BACKSPACE) {
+		if (!sap.ui.Device.browser.internet_explorer || oEvent.which !== jQuery.sap.KeyCodes.BACKSPACE) {
 			return;
 		}
 
