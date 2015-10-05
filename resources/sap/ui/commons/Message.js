@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './Dialog', './library', 'sap/ui/core/Contro
 	 * @class
 	 * Creates the "Message"s to be supplied to the "MessageBar" Control.
 	 * @extends sap.ui.core.Control
-	 * @version 1.30.8
+	 * @version 1.30.9
 	 *
 	 * @constructor
 	 * @public

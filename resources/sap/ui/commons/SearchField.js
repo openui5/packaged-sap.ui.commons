@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.30.8
+	 * @version 1.30.9
 	 *
 	 * @constructor
 	 * @public
@@ -944,14 +944,16 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 
 				if (oCtrl.getParent().getSearchProvider() && oCtrl.getParent().getSearchProvider().getIcon()) {
 					oRM.write("<div");
-					oRM.writeAttributeEscaped('id', oCtrl.getId() + '-providerico');
+					oRM.writeAttribute('id', oCtrl.getId() + '-providerico');
 					oRM.writeAttribute('unselectable', 'on');
 					if (sap.ui.getCore().getConfiguration().getAccessibility()) {
 						oRM.writeAttribute("role", "presentation");
 					}
 					oRM.addClass("sapUiSearchFieldProvIco");
 					oRM.writeClasses();
-					oRM.write("><img src=\"" + oCtrl.getParent().getSearchProvider().getIcon() + "\"/></div>");
+					oRM.write("><img");
+					oRM.writeAttributeEscaped("src", oCtrl.getParent().getSearchProvider().getIcon());
+					oRM.write("/></div>");
 				}
 			},
 
