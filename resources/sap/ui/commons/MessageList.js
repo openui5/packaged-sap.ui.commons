@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @class
 	 * Instantiated by the "MessageBar" Control if the user ever requests to generate the corresponding "MessageList".
 	 * @extends sap.ui.core.Control
-	 * @version 1.30.9
+	 * @version 1.30.10
 	 *
 	 * @constructor
 	 * @public
