@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
      * @implements sap.ui.core.PopupInterface
      *
      * @author SAP SE
-     * @version 1.26.15
+     * @version 1.26.16
      *
      * @constructor
      * @public
