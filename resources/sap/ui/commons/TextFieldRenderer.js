@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -14,7 +14,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'sap/ui/core/ValueSt
 	 * TextField Renderer
 	 * @namespace
 	 * @author SAP
-	 * @version 1.34.1
+	 * @version 1.34.2
 	 * @since 0.9.0
 	 */
 	var TextFieldRenderer = {};
@@ -93,7 +93,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'sap/ui/core/ValueSt
 
 		if (tooltip) {
 			// render title always on INPUT tag (even it's in outer DIV too)
-			// because screenreader ignores it on outer DIV 
+			// because screenreader ignores it on outer DIV
 			rm.writeAttributeEscaped('title', tooltip);
 		}
 

@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -16,7 +16,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 	 */
 	var CheckBoxRenderer = {
 	};
-	
+
 	/**
 	 * Renders the HTML for the CheckBox, using the provided {@link sap.ui.core.RenderManager}.
 	 *
@@ -43,7 +43,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 			inErrorState = sap.ui.core.ValueState.Error == oCheckBox.getValueState();
 			inWarningState = sap.ui.core.ValueState.Warning == oCheckBox.getValueState();
 		}
-	
+
 		// Add classes and properties depending on the state
 		if (oCheckBox.getChecked()) {
 			rm.addClass("sapUiCbChk");
@@ -78,7 +78,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 			rm.addClass("sapUiCbInteractive");
 		}
 		rm.writeClasses();
-	
+
 		if (oCheckBox.getWidth() && oCheckBox.getWidth() != '') {
 			rm.writeAttribute("style", "width:" + oCheckBox.getWidth() + ";");
 		}
@@ -131,7 +131,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 			this.renderText(rm, oCheckBox.getText(), oCheckBox.getTextDirection());
 		}
 		rm.write("</label>");
-	
+
 		// close the surrounding <span> element
 		rm.write("</span>");
 	};
@@ -151,7 +151,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 			rm.write("</span>");
 		}
 	};
-	
+
 
 	return CheckBoxRenderer;
 

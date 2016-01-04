@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -19,7 +19,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 		 * @class
 		 * The FormattedTextView control allows the usage of a limited set of HTML tags for display.
 		 * @extends sap.ui.core.Control
-		 * @version 1.34.1
+		 * @version 1.34.2
 		 *
 		 * @constructor
 		 * @public
@@ -135,10 +135,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 		 */
 		FormattedTextView.prototype.hasControls = function () {
 			var aControls = this.getAggregation("controls");
-			if (aControls && aControls.length > 0) {
-				return true;
-			}
-			return false;
+			return !!(aControls && aControls.length > 0);
 		};
 
 		/**
@@ -220,7 +217,6 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 		/**
 		 * Sets the controls to be rendered.
 		 * @param {array} aControls Controls should be rendered
-		 * @param {sap.ui.commons.FormattedTextView} oThis An execution context will be passed
 		 * @private
 		 */
 		var fnSetControls = function (aControls) {

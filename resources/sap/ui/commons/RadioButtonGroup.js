@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -12,18 +12,18 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	/**
 	 * Constructor for a new RadioButtonGroup.
 	 *
-	 * @param {string} [sId] ID for the new control, generated automatically if no ID is given 
+	 * @param {string} [sId] ID for the new control, generated automatically if no ID is given
 	 * @param {object} [mSettings] Initial settings for the new control
 	 *
 	 * @class
-	 * The RadioButtonGroup is a basic control that is used to provide area for making interactive 
-	 * choice out of a set of options. It represents a list with items where exactly one item can 
-	 * be selected in a session. For the representation of the single group entries, the RadioButton 
-	 * items are created automatically. For the RadioButton choice, mouse and keyboard navigation 
+	 * The RadioButtonGroup is a basic control that is used to provide area for making interactive
+	 * choice out of a set of options. It represents a list with items where exactly one item can
+	 * be selected in a session. For the representation of the single group entries, the RadioButton
+	 * items are created automatically. For the RadioButton choice, mouse and keyboard navigation
 	 * usage is supported.
-	 * 
+	 *
 	 * @extends sap.ui.core.Control
-	 * @version 1.34.1
+	 * @version 1.34.2
 	 *
 	 * @constructor
 	 * @public
@@ -67,10 +67,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			selectedIndex : {type : "int", group : "Data", defaultValue : 0},
 
 			/**
-			 * Enables/disables the RadioButtonGroup. If it is disabled all RadioButtons will be displayed as disabled. 
-			 * The enabled property of the Item will not be used in this case. If the RadioButtonGroup is enabled, the 
+			 * Enables/disables the RadioButtonGroup. If it is disabled all RadioButtons will be displayed as disabled.
+			 * The enabled property of the Item will not be used in this case. If the RadioButtonGroup is enabled, the
 			 * enabled property of the Item will define if a RadioButton is enabled or not.
-			 * 
+			 *
 			 * @since 1.10.3
 			 */
 			enabled : {type : "boolean", group : "Behavior", defaultValue : true}
@@ -88,7 +88,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			/**
 			 * Association to controls / IDs, which describe this control (see WAI-ARIA attribute aria-describedby).
 			 */
-			ariaDescribedBy : {type : "sap.ui.core.Control", multiple : true, singularName : "ariaDescribedBy"}, 
+			ariaDescribedBy : {type : "sap.ui.core.Control", multiple : true, singularName : "ariaDescribedBy"},
 
 			/**
 			 * Association to controls / IDs, which label this control (see WAI-ARIA attribute aria-labelledby).
@@ -255,7 +255,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	/*
 	 * Gets the Item of the selected RadioButton and returns it.
 	 * @public
-	 * 
+	 *
 	 */
 
 	/**
