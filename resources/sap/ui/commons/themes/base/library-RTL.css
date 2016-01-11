@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 /* Global CSS for 'base' theme */
@@ -8,11 +8,11 @@
 /* TMP during LESS convertion ---- to be deleted */
 /* may be required by SubstitutionRulesManager.css in inbox lib */
 /* ---------------------------------------------------------------------------------------- */
-/** 
+/**
   * This parameter is used in the Shell control to calculate the size when it grows.
-  * !!! ONLY PX-VALUES ARE ALLOWED HERE. 
+  * !!! ONLY PX-VALUES ARE ALLOWED HERE.
   */
-/** 
+/**
   * This parameter is used in the Shell control to calculate the size of the margin when showing
   * an overflow button in the right pane. As of 1.18.0 this value contains the _maximum_ height
   * of the overflow button, if the text inside the button is smaller, the button shrinks with it.
@@ -29,20 +29,20 @@
 /*make small margin themable*/
 /*make medium margin themable*/
 /*make large margin themable*/
-/* 
+/*
  * This is a mixin for creating the predefined container content padding
  * classes:
  * sapUiNoContainerContentPadding
  * sapUiContainerContentPadding
  * sapUiResponsiveContainerContentPadding
- * These classes can be set on many UI5 containers and will 
- * add padding inside the container's content padding based 
+ * These classes can be set on many UI5 containers and will
+ * add padding inside the container's content padding based
  * on the selectors that are arguments for this mixin.
  *
  * Arguments to this function-like mixin are the rootClass selector and
  * the content selector where the padding should be applied.
  */
-/* 
+/*
   * the sapLess-parser has problems with an escaped string as default value for the parameterized mixin
   * therefore we need to temporarily use a parameter assigning the default value
   */
@@ -189,7 +189,7 @@ html[dir=rtl][data-sap-ui-browser^="ie"] .sapUiAcdSectionHdr {
 }
 .sapUiAcdSectionCont {
   /* 'position' will be set by the renderer if required. Do not set any positioning here! */
-  /* It will be set to 'absolute' if sizes are set, in order to extend the content to fully use the available space. 
+  /* It will be set to 'absolute' if sizes are set, in order to extend the content to fully use the available space.
 	Otherwise to 'relative', to fix an IE7 bug which would leave overflowing content with 'position relative' visible. */
   margin-bottom: 0px;
   /* will be overwritten in the sapUiAcdSectionFlexHeight case */
@@ -2844,13 +2844,13 @@ html[data-sap-ui-browser^="ie"] .sapUiLbx.sapUiLbxFlexWidth > ul > li > span:las
 }
 .sapUiMsgBarSums .sapUiImg {
 	outline-style: none;
-	vertical-align: middle;  As controls do not vertically align on their own 
+	vertical-align: middle;  As controls do not vertically align on their own
 }
 .sapUiMsgBarSums .sapUiTv {
 	padding: 0 5px 0 0;
-	vertical-align: middle;  As controls do not vertically align on their own 
+	vertical-align: middle;  As controls do not vertically align on their own
 }
- On RTL, the padding switches sides. 
+ On RTL, the padding switches sides.
 .sapUiRtl .sapUiMsgBarSums .sapUiTv {
 	padding: 0 0 0 5px;
 }*/
@@ -3449,6 +3449,7 @@ html[data-sap-ui-browser^="ie"] .sapUiRbGDummy {
   float: right;
   clear: right;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 .sapUiRbG.sapUiRbG1Row > .sapUiRb {
   float: none;
@@ -4040,7 +4041,7 @@ html[data-sap-ui-browser="ie8"] .sapUiSegmentedButton > span > button:first-chil
 /* ================================================= */
 /* CSS for control sap.ui.commons/Slider.control     */
 /* ================================================= */
-/* All DIV elements MUST have a POSITION definition, otherwise the calculation of the 
+/* All DIV elements MUST have a POSITION definition, otherwise the calculation of the
    grip position will not work */
 .sapUiSli {
   position: relative;
@@ -4672,7 +4673,7 @@ html[data-sap-ui-browser="ie8"] .sapUiTfInner.sapUiTf {
 .sapUiTree {
   color: #000000;
 }
-/* if the Tree is used within another control that 
+/* if the Tree is used within another control that
 has a black/dark background the Tree itself has to
 invert its text to white as well */
 .sapUiInverted-CTX .sapUiTree {

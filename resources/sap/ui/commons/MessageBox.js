@@ -1,13 +1,13 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
 // Provides class sap.ui.commons.MessageBox
-sap.ui.define(['jquery.sap.global', 'sap/ui/core/library', 'sap/ui/core/ElementMetadata', 'sap/ui/core/Control', 
+sap.ui.define(['jquery.sap.global', 'sap/ui/core/library', 'sap/ui/core/ElementMetadata', 'sap/ui/core/Control',
 			   './library', './Button', './Dialog', './Image', './TextView', './layout/MatrixLayout', './layout/MatrixLayoutCell'],
-	function(jQuery, core, ElementMetadata, Control, 
+	function(jQuery, core, ElementMetadata, Control,
 			 commons, Button, Dialog, Image, TextView, MatrixLayout, MatrixLayoutCell) {
 
 	"use strict";
@@ -36,7 +36,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/library', 'sap/ui/core/ElementM
 	 * @alias sap.ui.commons.MessageBox
 	 */
 	var MessageBox = {};
-	
+
 	/**
 	 * Enumeration of supported actions in a MessageBox.
 	 *

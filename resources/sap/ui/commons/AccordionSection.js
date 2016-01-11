@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -10,11 +10,11 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	"use strict";
 
 
-	
+
 	/**
 	 * Constructor for a new AccordionSection.
 	 *
-	 * @param {string} [sId] id for the new control, generated automatically if no id is given 
+	 * @param {string} [sId] id for the new control, generated automatically if no id is given
 	 * @param {object} [mSettings] initial settings for the new control
 	 *
 	 * @class
@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.28.25
+	 * @version 1.28.26
 	 *
 	 * @constructor
 	 * @public
@@ -30,25 +30,25 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
 	var AccordionSection = Element.extend("sap.ui.commons.AccordionSection", /** @lends sap.ui.commons.AccordionSection.prototype */ { metadata : {
-	
+
 		library : "sap.ui.commons",
 		properties : {
-	
+
 			/**
 			 * When the section content exceeds maxHeight, a vertical scroll bar appears.
 			 */
 			maxHeight : {type : "sap.ui.core.CSSSize", group : "Dimension", defaultValue : null},
-	
+
 			/**
 			 * Requirement is that the used theme supports the control.
 			 */
 			enabled : {type : "boolean", group : "Behavior", defaultValue : true},
-	
+
 			/**
 			 * It is recommended to make some settings for the width when the section is set to 'collapsed'.
 			 */
 			collapsed : {type : "boolean", group : "Behavior", defaultValue : false},
-	
+
 			/**
 			 * Text for the section header
 			 */
@@ -56,7 +56,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 		},
 		defaultAggregation : "content",
 		aggregations : {
-	
+
 			/**
 			 * Aggregates the controls that are contained in the panel. Control layouting is browser-dependent. For a stable content layout, use a layout control as direct single child.
 			 * When the panel dimensions are set, the child control may have width and height of 100%;
@@ -65,18 +65,18 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 			content : {type : "sap.ui.core.Control", multiple : true, singularName : "content"}
 		},
 		events : {
-	
+
 			/**
 			 * Event is fired when the user scrolls the panel.
 			 */
 			scroll : {
 				parameters : {
-	
+
 					/**
 					 * Horizontal scroll position.
 					 */
-					left : {type : "int"}, 
-	
+					left : {type : "int"},
+
 					/**
 					 * Vertical scroll position.
 					 */
@@ -85,14 +85,14 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 			}
 		}
 	}});
-	
+
 	/**
 	 * AccordionSection Behavior Implementation
 	 *
 	 * Open:
 	 * - HeaderDesign not implemented yet
 	 */
-	
+
 	/**
 	 * Do some initialization
 	 * @private
@@ -100,10 +100,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	AccordionSection.prototype.init = function(){
 	   this.bIgnoreScrollEvent = true; // do not fire a scroll event initially
 	   this.oScrollDomRef = null;      // points to the content area
-	   
+
 	   this.data("sap-ui-fastnavgroup", "true", true); // Define group for F6 handling
 	};
-	
+
 	/**
 	 * Set focus on the first control
 	 * @private
@@ -114,38 +114,38 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 			aControls[0].focus();
 		}
 	};
-	
+
 	/**
 	 * Set focus the arrow
 	 * @private
 	 */
 	AccordionSection.prototype.focus = function () {
-	
+
 		var header = this.getDomRef("hdr");
 		header.focus();
 	};
-	
+
 	/**
 	 * Called after the theme has been switched, required for adjustments
 	 * @private
 	 */
 	AccordionSection.prototype.onThemeChanged = function () {
 		var hdrLeft = this.getDomRef("hdrL");
-	
+
 		if (hdrLeft) {
 			hdrLeft.style.width = "auto";
 			var that = this;
 			setTimeout(function() {that.onAfterRendering();}, 0); // TODO: there is a problem in IE8, depending on what the surrounding container is...
 		}
-	
+
 	}
-	
+
 	/**
 	 * Adapts size settings of the rendered HTML
 	 * @private
 	 */;
 	AccordionSection.prototype.onAfterRendering = function () {
-	
+
 		this.oScrollDomRef = this.getDomRef("cont");
 		var cont	  = this.oScrollDomRef;
 		var root	  = this.getDomRef();
@@ -156,40 +156,40 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 				var contTop = cont.offsetTop;
 				var targetHeight = (root.offsetHeight - contTop);
 				cont.style.height = targetHeight + "px";
-	
+
 				var actualContHeight = cont.offsetHeight;
 				if (actualContHeight > targetHeight) {
 					cont.style.height = targetHeight - (actualContHeight - targetHeight) + "px";
 				}
 			}
-	
+
 		}
-	
+
 		var leftBorder	= jQuery(accordion).css("border-left-width");
 		var rightBorder = jQuery(accordion).css("border-right-width");
-	
-	
+
+
 		var borderTotal = parseFloat(leftBorder.substring(0, leftBorder.indexOf("px") )) + parseFloat(rightBorder.substring(0, rightBorder.indexOf("px") ));
 		var oDomLabel = this.getDomRef("lbl");
 		root.style.width = accordion.offsetWidth - borderTotal + "px";
 		oDomLabel.style.width = accordion.offsetWidth - 30 + "px";
-	
+
 		//Bind the scroll event (does not bubble)
 		var fnScrollProxy = this.__scrollproxy__;
 		if (!fnScrollProxy) {
 			fnScrollProxy = this.__scrollproxy__ = jQuery.proxy(this.onscroll, this);
 		}
 		this.$("cont").bind("scroll", fnScrollProxy);
-	
+
 	};
-	
+
 	AccordionSection.prototype.onBeforeRendering = function() {
 		var fnScrollProxy = this.__scrollproxy__;
 		if (fnScrollProxy) {
 			this.$("cont").unbind("scroll", fnScrollProxy);
 		}
 	};
-	
+
 	/**
 	 * Property setter for the "enabled" state
 	 *
@@ -210,8 +210,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 		}
 		return this;
 	};
-	
-	
+
+
 	/**
 	 * Property setter for the "collapsed" state
 	 *
@@ -222,7 +222,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 		this.setProperty("collapsed", bCollapsed, true); // no re-rendering!
 		this._setCollapsedState(bCollapsed); // adapt rendered control without complete re-rendering
 	};
-	
+
 	/**
 	 * Property setter for the "collapsed" state
 	 *
@@ -232,7 +232,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	 */
 	AccordionSection.prototype.setCollapsed = function(bCollapsed) {
 		if (this.getParent()) {
-	
+
 			if (!bCollapsed) {
 				this.getParent().openSection(this.getId());
 			} else {
@@ -243,8 +243,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 		}
 		return this;
 	};
-	
-	
+
+
 	/**
 	 * Internal method for applying a "collapsed" state to the rendered HTML
 	 *
@@ -252,12 +252,12 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	 * @private
 	 */
 	AccordionSection.prototype._setCollapsedState = function(bCollapsed) {
-	
+
 		if (this.getDomRef()) {
 			// after AccordionSection has been rendered
 			if (bCollapsed) {
 				var accessibility = sap.ui.getCore().getConfiguration().getAccessibility();
-	
+
 				// collapsing
 				if (!this.getParent().getWidth()) {
 					this.getDomRef().style.width = this.getDomRef().offsetWidth + "px"; // maintain the current width
@@ -267,16 +267,16 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 				if (tb) {
 					tb.style.display = "none";
 				}
-	
+
 				var cont = this.getDomRef("cont");
 				cont.style.display = "none";
 				if (accessibility) {
 					cont.setAttribute("aria-expanded", "false");
 					cont.setAttribute("aria-hidden", "true");
 				}
-	
+
 				this.invalidate();
-	
+
 			} else {
 				// expanding
 				if (!this.getDomRef("cont")) {
@@ -289,13 +289,13 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 					if (tb) {
 						tb.style.display = "block";
 					}
-	
+
 					var cont = this.getDomRef("cont");
 					cont.style.display = "block";
 					if (accessibility) {
 						cont.setAttribute("aria-expanded", "true");
 					}
-	
+
 					if (this.getMaxHeight()) {
 						this.getDomRef().style.height = this.getMaxHeight(); // restore the set height
 					}
@@ -303,8 +303,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 			}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Static method that finds out whether the given CSS size is actually set.
 	 * Returns "true" for absolute and relative sizes, returns "false" if "null", "inherit" or "auto" is given.
@@ -316,10 +316,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 	AccordionSection._isSizeSet = function(sCssSize) {
 		return (sCssSize && !(sCssSize == "auto") && !(sCssSize == "inherit"));
 	}
-	
-	
+
+
 	/*   Event Handling   */
-	
+
 	/**
 	 * Handles any "triggering" actions like click and space
 	 *
@@ -336,7 +336,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Element'],
 			oEvent.stopPropagation();
 		}
 	};
-	
+
 	/**
 	 * Handles the scroll event of the browser
 	 *

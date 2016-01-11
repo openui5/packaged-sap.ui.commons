@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 sap.ui.define(['jquery.sap.global'],
@@ -13,11 +13,11 @@ sap.ui.define(['jquery.sap.global'],
 	 * @namespace
 	 */
 	var FormattedTextViewRenderer = {};
-	
+
 	/*
 	 * Renders the HTML for the FormattedTextView, using the provided
 	 * {@link sap.ui.core.RenderManager}.
-	 * 
+	 *
 	 * @param {sap.ui.core.RenderManager} oRm the RenderManager that can be used for
 	 * writing to the render output buffer @param {sap.ui.core.Control} oControl an
 	 * object representation of the control that should be rendered
@@ -26,26 +26,26 @@ sap.ui.define(['jquery.sap.global'],
 		// pattern for placeholders:
 		var rPlaceHolderPattern = /<embed\s+data-index="([0-9]+)"\s*\/?>/gim;
 		var sHtml = oControl.getHtmlText();
-	
+
 		// clone, will be modified below
 		var aInnerControls = oControl.getControls().slice();
-	
+
 		var iToBeRendered = aInnerControls.length;
 		var lastIndex = 0;
 		var aMatch = [];
-	
+
 		// write the HTML into the render manager
 		oRm.write("<span");
 		oRm.writeControlData(oControl);
 		oRm.addClass("sapUiFTV");
 		oRm.writeClasses();
-	
+
 		// render Tooltip
 		if (oControl.getTooltip_AsString()) {
 			oRm.writeAttributeEscaped("title", oControl.getTooltip_AsString());
 		}
 		oRm.write(">"); // span element
-	
+
 		// check for placeholders in htmlText property
 		while ((aMatch = rPlaceHolderPattern.exec(sHtml)) !== null) {
 			// write any static HTML between previous and current placeholder (if
@@ -61,15 +61,15 @@ sap.ui.define(['jquery.sap.global'],
 		}
 		// render the remainder of the HTML
 		oRm.write(sHtml.slice(lastIndex, sHtml.length));
-	
+
 		if (iToBeRendered > 0) {
 			jQuery.sap.log.warning('There are leftover controls in the aggregation that have not been used in the formatted text', oControl);
 		}
-	
+
 		oRm.write("</span>");
-	
+
 	};
-	
+
 	/* Private method for placeholder replacement */
 	FormattedTextViewRenderer._renderReplacement = function(rm, controlsIndex, aControls) {
 		if (aControls[controlsIndex]) {

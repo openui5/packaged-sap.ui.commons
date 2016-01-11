@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -12,13 +12,13 @@ sap.ui.define(['jquery.sap.global', './TextField', './TextView', './library', 's
 	/**
 	 * Constructor for a new InPlaceEdit.
 	 *
-	 * @param {string} [sId] id for the new control, generated automatically if no id is given 
+	 * @param {string} [sId] id for the new control, generated automatically if no id is given
 	 * @param {object} [mSettings] initial settings for the new control
 	 *
 	 * @class
 	 * The InPlaceEdit is a functionality to have text in display mode that can be changed in place.
 	 * @extends sap.ui.core.Control
-	 * @version 1.28.25
+	 * @version 1.28.26
 	 *
 	 * @constructor
 	 * @public
@@ -612,7 +612,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './TextView', './library', 's
 
 		/**
 		 * Delegate object for listening to the child elements' events.
-		 * WARNING: this is set to the InPlaceEdit-instance. This is done by setting it as the second 
+		 * WARNING: this is set to the InPlaceEdit-instance. This is done by setting it as the second
 		 *          parameter of the addDelegate call. (See updateControls())
 		 * @private
 		 */

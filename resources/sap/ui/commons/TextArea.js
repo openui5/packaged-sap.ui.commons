@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -12,13 +12,13 @@ sap.ui.define(['jquery.sap.global', './TextField', './library'],
 	/**
 	 * Constructor for a new TextArea.
 	 *
-	 * @param {string} [sId] id for the new control, generated automatically if no id is given 
+	 * @param {string} [sId] id for the new control, generated automatically if no id is given
 	 * @param {object} [mSettings] initial settings for the new control
 	 *
 	 * @class
 	 * Control to enter or display multible row text.
 	 * @extends sap.ui.commons.TextField
-	 * @version 1.28.25
+	 * @version 1.28.26
 	 *
 	 * @constructor
 	 * @public
@@ -62,7 +62,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library'],
 
 			/**
 			 * ID of label control
-			 * @deprecated Since version 1.5.2. 
+			 * @deprecated Since version 1.5.2.
 			 * Please use association AriaLabelledBy instead.
 			 */
 			labeledBy : {type : "string", group : "Identification", defaultValue : null, deprecated: true}
