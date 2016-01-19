@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -21,7 +21,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.32.9
+	 * @version 1.32.10
 	 *
 	 * @constructor
 	 * @public
@@ -123,7 +123,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		}
 		return this;
 	};
-	
+
 	TextView.prototype.exit = function() {
 		if (this._oPopup) {
 			this._oPopup.destroy();
@@ -137,29 +137,29 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			delete this._oPopup;
 		}
 	};
-	
+
 	sap.ui.commons.TextView.prototype.onmouseover = function(oEvent) {
 		var oRef = this.getDomRef();
 		if (Math.abs(oRef.clientWidth - oRef.scrollWidth) < 2){
 			return;
 		}
-	
+
 		if (!this._oPopup) {
 			 this._oPopup = new sap.ui.core.Popup();
 			 this._oPopup.setDurations(0, 0); // no animations
 			 this._oPopup.setContent(this._createInfo());
 			 this._oPopup.attachOpened(this._handleOpened, this);
 		}
-	
+
 		var eDock = sap.ui.core.Popup.Dock;
 		this._oPopup.open(0, eDock.BeginTop, eDock.BeginTop, this, "0 1", "fit", true);
 	};
-	
+
 	sap.ui.commons.TextView.prototype._createInfo = function(){
 		var $Me   = jQuery(this.getDomRef());
 		var sText = $Me.html();
 		var sHtml = "<span id='" + this.getId()+'-info' + "' class='sapUiTvInfo " + $Me.attr("class") + "'>" + sText + "</span>";
-	
+
 		var oDomRef = jQuery(sHtml).appendTo(sap.ui.getCore().getStaticAreaRef());
 		var that = this;
 		jQuery(oDomRef).mouseout([this.getId()], function(oEvent){
@@ -167,7 +167,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		});
 		return oDomRef;
 	};
-	
+
 	sap.ui.commons.TextView.prototype._handleOpened = function(){
 		var that = this;
 		jQuery.sap.byId(this.getId()+'-info').mouseout([this.getId()], function(oEvent){

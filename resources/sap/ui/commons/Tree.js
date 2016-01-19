@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @class
 	 * Simple tree to display item in a hierarchical way
 	 * @extends sap.ui.core.Control
-	 * @version 1.32.9
+	 * @version 1.32.10
 	 *
 	 * @constructor
 	 * @public
@@ -621,11 +621,11 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 			}
 		});
 	};
-	
+
 	/**
 	 * Determine the binding context of the given node (dependent on the model name used
 	 * for the nodes binding)
-	 * 
+	 *
 	 * @param {sap.ui.commons.TreeNode} oNode
 	 * @private
 	 */
@@ -805,7 +805,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	};
 
 	Tree.prototype._setSelectedNode = function(oNode, bSuppressEvent) {
-		var that = this, 
+		var that = this,
 			oContext = this.getNodeContext(oNode);
 
 		jQuery.each(this.mSelectedNodes, function(sId, oNode){
