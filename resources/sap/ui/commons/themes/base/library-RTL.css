@@ -3409,6 +3409,7 @@ html[data-sap-ui-browser^="ie"] .sapUiRbGDummy {
   float: right;
   clear: right;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 .sapUiRbG.sapUiRbG1Row > .sapUiRb {
   float: none;
