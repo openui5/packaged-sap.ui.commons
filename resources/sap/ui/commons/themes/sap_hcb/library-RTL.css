@@ -6578,9 +6578,26 @@ html[data-sap-ui-browser="ie8"] .sapUiTabDsbl:first-child {
 .sapUiTabPanel {
   top: 24px;
 }
-.sapUiTabDsbl:focus,
-html[data-sap-ui-browser^="ff"] .sapUiTabDsbl:focus {
-  outline: 3px solid #666666;
+.sapUiTabSel:focus,
+.sapUiTab:focus,
+.sapUiTabDsbl:focus {
+  outline: none;
+}
+.sapUiTabSel:focus::before,
+.sapUiTab:focus::before,
+.sapUiTabDsbl:focus::before {
+  border: 0.1875rem solid #ffffff;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.sapUiTabDsbl:focus::before {
+  border-color: #666666;
 }
 /* =============================================== */
 /* CSS for control sap.ui.commons/TextArea.control */
