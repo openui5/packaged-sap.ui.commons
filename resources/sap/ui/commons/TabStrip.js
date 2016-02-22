@@ -24,7 +24,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.34.6
+	 * @version 1.34.7
 	 *
 	 * @constructor
 	 * @public
@@ -118,7 +118,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 *         Defines the title text of the newly created tab
 	 * @param {sap.ui.core.Control} oContent
 	 *         Defines the root control of the content area
-	 * @type void
+	 * @returns {sap.ui.commons.Tab} oTab
+	 *         The created tab control
 	 * @public
 	 * @ui5-metamodel This method also will be described in the UI5 (legacy) designtime metamodel
 	 */
@@ -443,7 +444,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	TabStrip.prototype.rerenderPanel = function(iOldIndex) {
 
 		var iNewIndex = this.getSelectedIndex();
-		var $panel = this.getTabs()[iOldIndex].$("panel");
+		var oOldTab = this.getTabs()[iOldIndex];
+		var $panel = oOldTab.$("panel");
 		var sNewId = this.getTabs()[iNewIndex].getId();
 		var oTab = this.getTabs()[iNewIndex];
 
@@ -459,10 +461,14 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 
 			// change the ID and Label of the panel to the current tab
 			$panel.attr("id",sNewId + "-panel").attr("aria-labelledby", sNewId);
-		});
 
-		// call after rendering method of tab to set scroll functions
-		this.getTabs()[iNewIndex].onAfterRendering();
+			//store the scroll top and left possitions as a property value in order to be restored later
+			oOldTab.setProperty("scrollTop", $panel.scrollTop(), true);
+			oOldTab.setProperty("scrollLeft", $panel.scrollLeft(), true);
+
+			// call after rendering method of tab to set scroll functions
+			oTab.onAfterRendering();
+		});
 
 		this.toggleTabClasses(iOldIndex, iNewIndex);
 	};

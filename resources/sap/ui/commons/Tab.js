@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Panel', './library'],
 	 * @extends sap.ui.commons.Panel
 	 *
 	 * @author SAP SE
-	 * @version 1.34.6
+	 * @version 1.34.7
 	 *
 	 * @constructor
 	 * @public
@@ -96,14 +96,11 @@ sap.ui.define(['jquery.sap.global', './Panel', './library'],
 
 		// Restore scroll positions
 		if (this.oScrollDomRef) {
-			var scrollTop = this.getProperty("scrollTop");
-			if (scrollTop > 0) {
-				this.oScrollDomRef.scrollTop = scrollTop;
-			}
-			var scrollLeft = this.getProperty("scrollLeft");
-			if (scrollLeft > 0) {
-				this.oScrollDomRef.scrollLeft = scrollLeft;
-			}
+			var scrollTop = this.getProperty("scrollTop") || 0;
+			this.oScrollDomRef.scrollTop = scrollTop;
+
+			var scrollLeft = this.getProperty("scrollLeft") || 0;
+			this.oScrollDomRef.scrollLeft = scrollLeft;
 		}
 
 		// TODO: this must also be done for tabs where the contents are not rendered initially

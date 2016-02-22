@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * usage is supported.
 	 *
 	 * @extends sap.ui.core.Control
-	 * @version 1.34.6
+	 * @version 1.34.7
 	 *
 	 * @constructor
 	 * @public
@@ -583,14 +583,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		this.setProperty("enabled", bEnabled, false); // re-rendering to update ItemNavigation
 
 		if (this.aRBs) {
-			var aItems = this.getItems();
-
 			for (var i = 0; i < this.aRBs.length; i++) {
-				if (bEnabled) {
-					this.aRBs[i].setEnabled(aItems[i].getEnabled());
-				} else {
-					this.aRBs[i].setEnabled(bEnabled);
-				}
+				this.aRBs[i].setEnabled(bEnabled);
 			}
 		}
 
