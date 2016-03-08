@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 *
 		 * @namespace
 		 * @author SAP SE
-		 * @version 1.36.3
+		 * @version 1.36.4
 		 *
 		 * @constructor
 		 * @public
@@ -303,7 +303,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		};
 
 		Dialog.prototype.setInitialFocus = function (sId) {
-			if (sId !== null && typeof sId != "string") {
+			if (sId && typeof sId != "string") {
 				sId = sId.getId();
 			}
 			this.oPopup.setInitialFocusId(sId);
@@ -510,15 +510,17 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 
 			// Make sure the dom content is not shown any more (in the static area)
 
-			// This used to be this.$().hide() which keeps the current DOM in the static UIArea. This led to the
-			// problem that control DOM with the same ID exists in two places if the control is added to a different
-			// aggregation without the dialog being destroyed. In this special case the RichTextEditor renders a
-			// textarea-element and afterwards tells the TinyMCE component which ID to use for rendering; since there
-			// are two elements with the same ID at that point, it does not work.
-			// As the Dialog can only contain other controls, we can safely discard the DOM - we cannot do this inside
-			// the Popup, since it supports displaying arbitrary HTML content.
-			RenderManager.preserveContent(this.getDomRef());
-			this.$().remove();
+			if (this.getDomRef()) {
+				// This used to be this.$().hide() which keeps the current DOM in the static UIArea. This led to the
+				// problem that control DOM with the same ID exists in two places if the control is added to a different
+				// aggregation without the dialog being destroyed. In this special case the RichTextEditor renders a
+				// textarea-element and afterwards tells the TinyMCE component which ID to use for rendering; since there
+				// are two elements with the same ID at that point, it does not work.
+				// As the Dialog can only contain other controls, we can safely discard the DOM - we cannot do this inside
+				// the Popup, since it supports displaying arbitrary HTML content.
+				RenderManager.preserveContent(this.getDomRef());
+				this.$().remove();
+			}
 		};
 
 		/**
