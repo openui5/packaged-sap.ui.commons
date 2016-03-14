@@ -105,6 +105,16 @@
 			assert.ok(this.initialPopupFocusSpy.calledWithExactly('btnCancel'), 'setInitialFocusId should be called with the proper sId');
 		});
 
+		QUnit.test('Setting inital focus to null', function(assert) {
+			this.oDialog.setInitialFocus(null);
+			assert.ok(this.initialPopupFocusSpy.calledWithExactly(null), 'setInitialFocusId should be called with the proper sId');
+		});
+
+		QUnit.test('Setting inital focus to undefined', function(assert) {
+			this.oDialog.setInitialFocus(undefined);
+			assert.ok(this.initialPopupFocusSpy.calledWithExactly(undefined), 'setInitialFocusId should be called with the proper sId');
+		});
+
 		QUnit.test('Get minimal reasonable size', function(assert){
 			var done = assert.async(),
 				that = this;
@@ -454,6 +464,60 @@
 				done();
 			});
 
+			this.oDialog.open();
+		});
+
+		QUnit.test("Preserve Dialog Content", function(assert) {
+			var done = assert.async();
+			var bRendered = false;
+			var oHtml = new sap.ui.core.HTML({
+				content: "<div id='htmlControl'>test</div>",
+				preferDOM : true,
+				afterRendering : function(oEvent) {
+					if (!bRendered) {
+						document.querySelector("#htmlControl").setAttribute("data-some-attribute", "some-value");
+						bRendered = true;
+					}
+				}
+			});
+			this.oDialog.addContent(oHtml);
+
+
+			var fnOpened2 = function() {
+				this.oDialog.oPopup.detachOpened(fnOpened2);
+
+				ok(!!document.querySelector("#htmlControl"), "HTML control rendered");
+				equals(document.querySelector("#htmlControl").getAttribute("data-some-attribute"), "some-value", "DOM attribute value set correctly");
+
+				this.oDialog.oPopup.attachClosed(done);
+
+				this.oDialog.close();
+			}.bind(this);
+
+			var fnClosed1 = function() {
+				this.oDialog.oPopup.detachClosed(fnClosed1);
+
+				equals(document.querySelector("#htmlControl").parentElement.id, "sap-ui-preserve", "HTML control rendered (preserved)");
+
+				this.oDialog.open();
+				this.oDialog.oPopup.attachOpened(fnOpened2);
+			}.bind(this);
+
+
+			var fnOpened1 = function() {
+				this.oDialog.oPopup.detachOpened(fnOpened1);
+
+				ok(!!document.querySelector("#htmlControl"), "HTML control rendered");
+				equals(document.querySelector("#htmlControl").getAttribute("data-some-attribute"), "some-value", "DOM attribute value set correctly");
+
+				this.oDialog.oPopup.attachClosed(fnClosed1);
+				this.oDialog.close();
+			}.bind(this);
+
+
+			equals(document.querySelector("#htmlControl"), null, "HTML control not rendered");
+
+			this.oDialog.oPopup.attachOpened(fnOpened1);
 			this.oDialog.open();
 		});
 
