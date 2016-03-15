@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 *
 		 * @namespace
 		 * @author SAP SE
-		 * @version 1.34.8
+		 * @version 1.34.9
 		 *
 		 * @constructor
 		 * @public
@@ -303,7 +303,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		};
 
 		Dialog.prototype.setInitialFocus = function (sId) {
-			if (sId !== null && typeof sId != "string") {
+			if (sId && typeof sId != "string") {
 				sId = sId.getId();
 			}
 			this.oPopup.setInitialFocusId(sId);
