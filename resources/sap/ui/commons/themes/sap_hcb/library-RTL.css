@@ -4232,20 +4232,25 @@ html[data-sap-ui-browser="ie8"] .sapUiSegmentedButton > span > button:first-chil
   position: relative;
 }
 .sapUiTabBar {
+  position: relative;
+  white-space: nowrap;
   cursor: default;
 }
 .sapUiTabBarCnt {
+  white-space: nowrap;
+  display: inline-block;
   overflow: hidden;
   margin-top: 0;
   padding-right: 0;
+  outline: none;
 }
 .sapUiTab,
 .sapUiTabSel,
 .sapUiTabDsbl {
   position: relative;
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   white-space: nowrap;
-  float: right;
 }
 .sapUiTabL {
   overflow: hidden;
@@ -4293,6 +4298,47 @@ span.sapUiTabIco {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+.sapUiTabBar .sapUiTabStripScrollContainer {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+}
+.sapUiTabBar .sapUiTabStripScrollIcon {
+  width: 16px;
+  height: 22px;
+  font-size: 10px;
+  margin-top: 6px;
+  padding-top: 4px;
+  vertical-align: top;
+  visibility: hidden;
+  display: none;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+.sapUiTabBar .sapUiTabStripRightScrollIcon {
+  position: absolute;
+  left: 0;
+}
+.sapUiTabStrip.sapUiTabStripScrollForward .sapUiTabStripRightScrollIcon,
+.sapUiTabStrip.sapUiTabStripScrollBack .sapUiTabStripLeftScrollIcon {
+  visibility: visible;
+}
+.sapUiTabStrip.sapUiTabStripScrollable .sapUiTabBar .sapUiTabStripScrollIcon {
+  display: inline-block;
+}
+.sapUiTabStrip.sapUiTabStripScrollable .sapUiTabBar .sapUiTabStripScrollContainer {
+  right: 16px;
+  left: 16px;
 }
 /* =============================================== */
 /* CSS for control sap.ui.commons/TextArea.control */
@@ -6596,8 +6642,24 @@ html[data-sap-ui-browser="ie8"] .sapUiTabDsbl:first-child {
   z-index: 1;
   pointer-events: none;
 }
+.sapUiTabBar .sapUiTabStripScrollIcon {
+  padding-top: 3px;
+  margin-top: 0;
+  height: 19px;
+}
 .sapUiTabDsbl:focus::before {
   border-color: #666666;
+}
+.sapUiTabStripScrollIcon {
+  color: #ffffff;
+  background: #000000;
+  border: 1px solid #ffffff;
+}
+.sapUiTabStripScrollIcon:hover {
+  background: #7a5100;
+}
+.sapUiTabStripScrollIcon:active {
+  background: #0f5d94;
 }
 /* =============================================== */
 /* CSS for control sap.ui.commons/TextArea.control */
