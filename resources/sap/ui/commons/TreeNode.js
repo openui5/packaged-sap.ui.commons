@@ -19,7 +19,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/CustomStyleClassSu
 	 * @class
 	 * Tree node element
 	 * @extends sap.ui.core.Element
-	 * @version 1.34.10
+	 * @version 1.34.11
 	 *
 	 * @constructor
 	 * @public
@@ -587,7 +587,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/CustomStyleClassSu
 			if (iNewScrollLeft !== undefined) {
 				mScrollPos.scrollLeft = iNewScrollLeft;
 			}
-			$TreeCont.animate(mScrollPos);
+			// Clear animation queue, so that only the last selected item gets animated
+			$TreeCont.stop(true, true).animate(mScrollPos);
 		}
 	};
 
