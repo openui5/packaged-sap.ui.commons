@@ -731,6 +731,51 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
   padding: 3px 0 0 0;
   height: 10px;
 }
+/* AdvancedMode ColorPicker */
+.sapUiColorPickerHSL .sapUiColorPicker-ColorPickerBox {
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(right, #000000, rgba(0, 0, 0, 0), #ffffff), -webkit-linear-gradient(top, rgba(128, 128, 128, 0), #808080);
+  background-image: -moz-linear-gradient(right, #000000, rgba(0, 0, 0, 0), #ffffff), -moz-linear-gradient(top, rgba(128, 128, 128, 0), #808080);
+  background-image: linear-gradient(right, #000000, rgba(0, 0, 0, 0), #ffffff), linear-gradient(top, rgba(128, 128, 128, 0), #808080);
+  background-image: -ms-linear-gradient(right, #000000, rgba(0, 0, 0, 0), #ffffff), -ms-linear-gradient(top, rgba(128, 128, 128, 0), #808080);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-ColorPickerMatrix .sapUiMltPadRight .sapUiVlt {
+  padding-right: 0;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-swatches {
+  margin-right: 18px;
+  margin-left: 16px;
+}
+.sapUiColorPickerHSL .sapUiColorPickerHSL-RB .sapUiRb {
+  margin-right: 10px;
+  margin-left: 0;
+}
+.sapUiColorPickerHSL .sapUiColorPickerHSL-RB .sapUiRb:first-child {
+  margin-right: 8px;
+  margin-left: 0;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-Arrow {
+  margin-right: 6px;
+  margin-top: 0px;
+  font-size: 18px;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-ColorPickerOldColor {
+  margin-top: 0;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-ColorPickerNewColor {
+  margin-top: 0;
+}
+.sapUiColorPickerHSL .sapUiColorPicker-swatches > div:last-child,
+.sapUiColorPickerHSL .sapUiColorPicker-swatches > div:first-child {
+  background-image: url(img-RTL/ColorPicker/Swatch_BG.png);
+  background-position: 0%;
+  background-repeat: no-repeat;
+}
+.sapUiSliBar {
+  background-image: url(img-RTL/ColorPicker/Alphaslider_BG.png);
+}
 /* =============================================== */
 /* CSS for control sap.ui.commons/ComboBox.control */
 /* =============================================== */

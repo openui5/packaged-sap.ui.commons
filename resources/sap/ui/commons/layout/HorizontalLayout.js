@@ -22,10 +22,11 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/layout/Hor
 	 * @extends sap.ui.layout.HorizontalLayout
 	 *
 	 * @author SAP SE
-	 * @version 1.38.0
+	 * @version 1.38.1
 	 *
 	 * @constructor
 	 * @public
+	 * @deprecated Since version 1.38. Instead, use the <code>sap.ui.layout.HorizontalLayout</code> control.
 	 * @alias sap.ui.commons.layout.HorizontalLayout
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */

@@ -20,10 +20,11 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @class
 	 * Provides navigation between pages within a list of numbered pages.
 	 * @extends sap.ui.core.Control
-	 * @version 1.38.0
+	 * @version 1.38.1
 	 *
 	 * @constructor
 	 * @public
+	 * @deprecated Since version 1.38.
 	 * @alias sap.ui.commons.Paginator
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */

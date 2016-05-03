@@ -28,10 +28,11 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control',
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.38.0
+	 * @version 1.38.1
 	 *
 	 * @constructor
 	 * @public
+	 * @deprecated Since version 1.38. Instead, use the <code>sap.m.TabContainer</code> control.
 	 * @alias sap.ui.commons.TabStrip
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
@@ -111,6 +112,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control',
 	TabStrip.SCROLL_ANIMATION_DURATION = sap.ui.getCore().getConfiguration().getAnimation() ? 500 : 0;
 
 	TabStrip.prototype.init = function() {
+
+		this._bInitialized = true;
 
 		this._bRtl = sap.ui.getCore().getConfiguration().getRTL();
 		this._iCurrentScrollLeft = 0;
@@ -273,6 +276,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control',
 	 * @private
 	 */
 	TabStrip.prototype.exit = function () {
+
+		this._bInitialized = false;
 
 		this._iCurrentScrollLeft = null;
 		this._iMaxOffsetLeft = null;
@@ -546,6 +551,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control',
 
 		// ensure that events from the controls in the panel are fired
 		jQuery.sap.delayedCall(0, this, function () {
+
+			if (!this._bInitialized) {
+				return;
+			}
 
 			var $panel = this.$().find('.sapUiTabPanel');
 

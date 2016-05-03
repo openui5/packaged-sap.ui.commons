@@ -22,10 +22,11 @@ sap.ui.define(['jquery.sap.global', './Button'],
 	 * @extends sap.ui.commons.Button
 	 *
 	 * @author SAP SE
-	 * @version 1.38.0
+	 * @version 1.38.1
 	 *
 	 * @constructor
 	 * @public
+	 * @deprecated Since version 1.38. Instead, use the <code>sap.m.ToggleButton</code> control.
 	 * @alias sap.ui.commons.ToggleButton
 	 * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
 	 */
