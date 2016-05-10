@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.34.11
+	 * @version 1.34.12
 	 *
 	 * @constructor
 	 * @public
@@ -874,10 +874,19 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @private
 	 */
 	Accordion.prototype.onAfterRendering = function() {
+		var core = sap.ui.getCore(),
+			that = this;
 
-		// Collect the dom references of the items
-		var oDomRef = this.getDomRef();
-		oDomRef.style.height = oDomRef.clientHeight - 7 + "px";
+		function adjustHeight() {
+			var oDomRef = that.getDomRef();
+			oDomRef.style.height = oDomRef.clientHeight - 7 + "px";
+		}
+
+		if (core.isThemeApplied()) {
+			adjustHeight();
+		} else {
+			core.attachThemeChanged(adjustHeight, this);
+		}
 
 		this.$().sortable({
 			handle: "> div.sapUiAcdSectionHdr > div",
