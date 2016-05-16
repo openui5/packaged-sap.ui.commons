@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.36.9
+	 * @version 1.36.10
 	 *
 	 * @constructor
 	 * @public
@@ -209,8 +209,6 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @private
 	 */
 	ListBox.prototype.onThemeChanged = function () {
-		ListBox._fItemHeight = -1;
-		ListBox._iBordersAndStuff = -1;
 		this._sTotalHeight = null;
 		if (!this._bHeightInItems) {
 			this._iVisibleItems = -1; // re-calculation only required for ItemNavigation - shouldn't change when explicitly set
