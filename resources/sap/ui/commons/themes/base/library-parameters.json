@@ -283,6 +283,7 @@
     "sapUiNegativeText": "#ff0000",
     "sapUiCriticalText": "#e78c07",
     "sapUiPositiveText": "#b5e7a8",
+    "sapUiNeutralText": "#ffffff",
     "sapUiNegative": "#bb0000",
     "sapUiCritical": "#e78c07",
     "sapUiPositive": "#2b7d2b",
@@ -659,8 +660,5 @@
     "sapUiRatingSymbolSelected": "img/rating/star_selected.png",
     "sapUiRatingSymbolUnselected": "img/rating/star_unselected.png",
     "sapUiRatingSymbolHovered": "img/rating/star_hover.png",
-    "sapUiTextFieldHeight": "16px",
-    "sapUiValueHelpIconRegularUrl": "/img/valuehelpfield/F4-Help_icon_regular.png",
-    "sapUiValueHelpIconHoverUrl": "/img/valuehelpfield/F4-Help_icon_hover.png",
-    "sapUiValueHelpIconDsblUrl": "/img/valuehelpfield/F4-Help_icon_dsbl.png"
+    "sapUiTextFieldHeight": "16px"
 }

@@ -773,7 +773,7 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
   background-position: 100%;
   background-repeat: no-repeat;
 }
-.sapUiSliBar {
+.sapUiColorPickerHSL .sapUiSliBar {
   background-image: url(img/ColorPicker/Alphaslider_BG.png);
 }
 /* =============================================== */
