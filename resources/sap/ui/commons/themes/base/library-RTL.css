@@ -110,6 +110,7 @@
   position: relative;
   /* enable positioning for children */
   top: -1px;
+  box-sizing: border-box;
 }
 .sapUiAcdSection-down {
   top: 20px;

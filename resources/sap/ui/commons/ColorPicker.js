@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.28.34
+	 * @version 1.28.35
 	 *
 	 * @constructor
 	 * @public
@@ -191,7 +191,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 		var cpBoxID = this.getId() + '-cpBox';
 		var cpCurID = this.getId() + '-cpCur';
 		this.oHtmlBox = new sap.ui.core.HTML({
-			content : "<DIV id=" + cpBoxID + " class=sapUiColorPicker-ColorPickerBox><DIV id=" + cpCurID + " class=sapUiColorPicker-ColorPickerCircle></DIV></DIV>"
+			content : "<DIV id=" + cpBoxID + " class='sapUiColorPicker-ColorPickerBox' style='width: 105px; height: 105px;'><DIV id=" + cpCurID + " class='sapUiColorPicker-ColorPickerCircle' style='width: 5px; height: 5px;'></DIV></DIV>"
 		});
 
 		//	HTML-Control containing the Old Color Box
