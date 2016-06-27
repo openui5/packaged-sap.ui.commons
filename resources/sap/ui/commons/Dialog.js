@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 *
 		 * @namespace
 		 * @author SAP SE
-		 * @version 1.36.13
+		 * @version 1.36.15
 		 *
 		 * @constructor
 		 * @public
@@ -321,6 +321,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			var bIsIE9Or10 = !!sap.ui.Device.browser.internet_explorer &&
 				(sap.ui.Device.browser.version == 9 || sap.ui.Device.browser.version == 10);
 			var bIsRTLOn = sap.ui.getCore().getConfiguration().getRTL();
+
+			this.$().css("opacity", "");
 
 			var _minSize = this.getMinSize();
 			this._minWidth = _minSize.width;
