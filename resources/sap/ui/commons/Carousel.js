@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.38.3
+	 * @version 1.38.4
 	 *
 	 * @constructor
 	 * @public
@@ -629,7 +629,12 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 			if (this.getWidth()) {
 				$Me.width(this.getWidth());
 			} else {
-				$Me.width(maxWidth * iVisibleItemsCount + (this.getHandleSize() * 2 - 1));
+				//Fix for the constant shrinking problem if no initial width is set
+				// BCP: 0020751294 0000156634 2016
+				var iDiff = $Me.width() - (maxWidth * iVisibleItemsCount + (this.getHandleSize() * 2 - 1));
+				if (iDiff > 5) {
+					$Me.width(maxWidth * iVisibleItemsCount + (this.getHandleSize() * 2 - 1));
+				}
 			}
 		} else {
 			contentBarSize = $Me.height() - this.getHandleSize() * 2 - 1;

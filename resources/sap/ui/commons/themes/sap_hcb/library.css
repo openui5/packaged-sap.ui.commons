@@ -6100,6 +6100,16 @@ html[data-sap-ui-browser^="ie"] .sapUiRb:focus:after {
 .sapUiSegmentedButton > span > .sapUiBtnS.sapUiBtnStd.sapUiBtnStdFocus {
   outline: 3px solid #ffffff;
 }
+.sapUiSegmentedButton > span > .sapUiBtnS.sapUiBtnStd:hover {
+  background: #7a5100;
+}
+.sapUiSegmentedButton > span > .sapUiBtnS.sapUiBtnStd,
+.sapUiSegmentedButton > span > .sapUiBtnS.sapUiBtnDsbl {
+  background: transparent;
+}
+.sapUiSegmentedButton > span > .sapUiBtnS.sapUiSegButtonSelected {
+  background: #0f5d94;
+}
 /* ================================================= */
 /* CSS for control sap.ui.commons/Slider.control     */
 /* HCB Theme                                         */
@@ -6603,8 +6613,11 @@ html[dir=rtl][data-sap-ui-browser="ie9"] .sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.
 }
 .sapUiBtnS.sapUiBtnNorm.sapUiToggleBtn.sapUiToggleBtnPressed:before,
 .sapUiBtnS.sapUiBtnLite.sapUiToggleBtn.sapUiToggleBtnPressed:before,
+.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:before,
 .sapUiBtnS.sapUiBtnNorm.sapUiToggleBtn.sapUiToggleBtnPressed:active:before,
-.sapUiBtnS.sapUiBtnLite.sapUiToggleBtn.sapUiToggleBtnPressed:active:before {
+.sapUiBtnS.sapUiBtnLite.sapUiToggleBtn.sapUiToggleBtnPressed:active:before,
+.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:hover:before,
+.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:active:before {
   content: url("img/toggleButton/arrow_down_hover.png");
   display: inline-block;
   height: 18px;
@@ -6613,11 +6626,8 @@ html[dir=rtl][data-sap-ui-browser="ie9"] .sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.
 .sapUiBtnS.sapUiBtnNorm.sapUiToggleBtn:before,
 .sapUiBtnS.sapUiBtnLite.sapUiToggleBtn:before,
 .sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn:before,
-.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:before,
 .sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn:hover:before,
-.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn:active:before,
-.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:hover:before,
-.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn.sapUiToggleBtnPressed:active:before {
+.sapUiBtnS.sapUiBtnDsbl.sapUiToggleBtn:active:before {
   content: url("img/toggleButton/arrow_right_hover.png");
   display: inline-block;
   height: 18px;
