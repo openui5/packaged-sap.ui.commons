@@ -451,6 +451,7 @@ html[data-sap-ui-browser="sf5"] .sapUiBtnS > .sapUiBtnTxt {
   font-weight: normal;
   line-height: 21px;
   height: 21px;
+  cursor: inherit;
 }
 /* ============================================== */
 /* CSS for control sap.ui.commons/Callout.control */
@@ -759,7 +760,7 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
 .sapUiColorPickerHSL .sapUiColorPicker-Arrow {
   margin-right: 6px;
   margin-top: 0px;
-  font-size: 18px;
+  font-size: 12px;
 }
 .sapUiColorPickerHSL .sapUiColorPicker-ColorPickerOldColor {
   margin-top: 0;
@@ -775,6 +776,10 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
 }
 .sapUiColorPickerHSL .sapUiSliBar {
   background-image: url(img-RTL/ColorPicker/Alphaslider_BG.png);
+}
+/* needed for the Theme Designer, to overwrite the current style "box-sizing: border-box;" of all div's */
+.sapUiColorPicker-ColorPickerMatrix div {
+  box-sizing: content-box;
 }
 /* =============================================== */
 /* CSS for control sap.ui.commons/ComboBox.control */
