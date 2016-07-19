@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global'],
 	 * @extends sap.ui.unified.MenuItemBase
 	 *
 	 * @author SAP SE
-	 * @version 1.40.1
+	 * @version 1.40.2
 	 * @since 1.0.0
 	 *
 	 * @deprecated Since version 1.21.0.

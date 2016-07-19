@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.40.1
+	 * @version 1.40.2
 	 *
 	 * @constructor
 	 * @public
@@ -151,7 +151,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @private
 	 */
 	Button.prototype.onclick = function(oEvent) {
-		if (this.getEnabled()) {
+		if (this.getEnabled() && this.getVisible()) {
 			this.firePress({/* no parameters */});
 		}
 
