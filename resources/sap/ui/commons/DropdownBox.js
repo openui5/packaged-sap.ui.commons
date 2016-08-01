@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	 * The control provides a field that allows end users to an entry out of a list of pre-defined items.
 	 * The choosable items can be provided in the form of a complete <code>ListBox</code>, single <code>ListItems</code>.
 	 * @extends sap.ui.commons.ComboBox
-	 * @version 1.28.36
+	 * @version 1.28.37
 	 *
 	 * @constructor
 	 * @public
@@ -1097,7 +1097,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 	 * @private
 	 */
 	DropdownBox.prototype._prepareOpen = function(oListBox, oPopup){
-		this._oValueBeforeOpen = this.$().val();
+		this._oValueBeforeOpen = jQuery(this.getInputDomRef()).val();
 
 		// remember we opening the popup (needed in applyFocusInfo called after rerendering of ListBox)
 		this._Opening = true;
@@ -1111,6 +1111,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './library', 'sap/ui/core/Hist
 				iItemIndex = this.indexOfItem(sap.ui.getCore().byId(this.getSelectedItemId()));
 			}
 			this._doTypeAhead("", jQuery(this.getInputDomRef()).val(), true, iItemIndex);
+			this._doSelect(); // select all to have the same behaviour like by navigatin in open list and closing list
 		}
 		return this;
 	};
