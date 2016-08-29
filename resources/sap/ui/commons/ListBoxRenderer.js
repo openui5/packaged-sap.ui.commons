@@ -14,7 +14,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'jquery.sap.strings'
 	 * ListBox Renderer
 	 *
 	 * @author d046011
-	 * @version 1.28.37
+	 * @version 1.28.38
 	 * @namespace
 	 */
 	var ListBoxRenderer = {
