@@ -20,14 +20,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 	 * @namespace
 	 * @name sap.ui.commons
 	 * @author SAP SE
-	 * @version 1.40.6
+	 * @version 1.40.7
 	 * @public
 	 */
 
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
 		name : "sap.ui.commons",
-		version: "1.40.6",
+		version: "1.40.7",
 		dependencies : ["sap.ui.core","sap.ui.layout","sap.ui.unified"],
 		types: [
 			"sap.ui.commons.ButtonStyle",
@@ -103,7 +103,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 			"sap.ui.commons.RangeSlider",
 			"sap.ui.commons.RatingIndicator",
 			"sap.ui.commons.ResponsiveContainer",
-			"sap.ui.commons.ResponsiveContainerRange",
 			"sap.ui.commons.RichTooltip",
 			"sap.ui.commons.RoadMap",
 			"sap.ui.commons.RowRepeater",
@@ -140,6 +139,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 			"sap.ui.commons.MenuItem",
 			"sap.ui.commons.MenuItemBase",
 			"sap.ui.commons.MenuTextFieldItem",
+			"sap.ui.commons.ResponsiveContainerRange",
 			"sap.ui.commons.RoadMapStep",
 			"sap.ui.commons.RowRepeaterFilter",
 			"sap.ui.commons.RowRepeaterSorter",

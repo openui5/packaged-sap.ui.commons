@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.40.6
+	 * @version 1.40.7
 	 *
 	 * @constructor
 	 * @public
@@ -618,6 +618,10 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 
 	ListBox.prototype.onclick = function (oEvent) {
 		this._handleUserActivation(oEvent);
+	};
+
+	ListBox.prototype.ontouchmove = function (oEvent) {
+		oEvent.setMarked();
 	};
 
 	ListBox.prototype.onsapspace = function (oEvent) {
