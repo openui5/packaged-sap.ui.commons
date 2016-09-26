@@ -298,5 +298,64 @@
         "references": []
       }
     ]
+  },
+  "1.38.4": {
+    "date": "June 2016",
+    "notes": [
+      {
+        "id": "a1263f02aca33196541b3db8ee4235ba5cc514b2",
+        "author": "Michael Sobczak \u003cmichael.sobczak@sap.com\u003e",
+        "type": "FIX",
+        "text": "HCB theme: Disabled toggled state for sap.ui.commons.ToggleButton fixed",
+        "references": []
+      },
+      {
+        "id": "09651fa290fa97a5cbc985ae2db42b93f7cbf4c0",
+        "author": "Michael Sobczak \u003cmichael.sobczak@sap.com\u003e",
+        "type": "FIX",
+        "text": "HCB theme: Focus outline for sap.ui.commons.SegmentedButton fixed",
+        "references": []
+      },
+      {
+        "id": "af67642b890b81397366248630f8bbbf68033db2",
+        "author": "Michael Sobczak \u003cmichael.sobczak@sap.com\u003e",
+        "type": "FIX",
+        "text": "HCB theme: Pressed state for sap.ui.commons.SegmentedButton fixed",
+        "references": []
+      }
+    ]
+  },
+  "1.38.8": {
+    "date": "September 2016",
+    "notes": [
+      {
+        "id": "25869dd6b78e8567d15ec721cf6f144610fcce7b",
+        "author": "Jiawei \u003cjiawei.cao@sap.com\u003e",
+        "type": "FIX",
+        "text": "core.TooltipBase: show parent control tooltip if no tooltip on child",
+        "references": []
+      },
+      {
+        "id": "5a05c914fb8c6d3e172171d30e3f447479d42eb6",
+        "author": "Sebastian Allmann \u003csebastian.allmann@sap.com\u003e",
+        "type": "FIX",
+        "text": "sap.m.DatePicker: keyboard support wrong if different calendarType used",
+        "references": []
+      },
+      {
+        "id": "5611f7814027f05cc3a2a73e4ec1784aa1319b02",
+        "author": "Martin R. Hristov \u003cmartin.r.hristov@sap.com\u003e",
+        "type": "FIX",
+        "text": "sap.ui.commons.ListBox: Scroll should not have special handling on mobile device",
+        "references": []
+      },
+      {
+        "id": "f3ab7d8f523a4dd1470a6b56c97e66c5e145f357",
+        "author": "Jiawei \u003cjiawei.cao@sap.com\u003e",
+        "type": "FIX",
+        "text": "sap.ui.core.Icon: mirroring of Icon should be done on pesudo element",
+        "references": []
+      }
+    ]
   }
 }
