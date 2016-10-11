@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 *
 		 * @namespace
 		 * @author SAP SE
-		 * @version 1.42.2
+		 * @version 1.42.3
 		 *
 		 * @constructor
 		 * @public
@@ -410,6 +410,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 				this.oPopup.setModal(this.getModal());
 				this.oPopup.setAutoClose(this.getAutoClose());
 				this.oPopup.open(400);
+				this._onResize();
 				this._bOpen = true;
 				this._registerContentResizeHandler();
 			}
