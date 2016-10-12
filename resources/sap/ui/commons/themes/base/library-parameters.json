@@ -669,8 +669,8 @@
     "sapUiDlgFooterHeight": "36px",
     "sapUiListBoxBorderRadius": "0",
     "sapUiPanelBorderRadius": "0",
-    "sapUiRatingSymbolSelected": "img/rating/star_selected.png",
-    "sapUiRatingSymbolUnselected": "img/rating/star_unselected.png",
-    "sapUiRatingSymbolHovered": "img/rating/star_hover.png",
+    "sapUiRatingSymbolSelected": "url(\"img/rating/star_selected.png\")",
+    "sapUiRatingSymbolUnselected": "url(\"img/rating/star_unselected.png\")",
+    "sapUiRatingSymbolHovered": "url(\"img/rating/star_hover.png\")",
     "sapUiTextFieldHeight": "16px"
 }
