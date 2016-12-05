@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Button'],
 	 * @extends sap.ui.commons.Button
 	 *
 	 * @author SAP SE
-	 * @version 1.38.11
+	 * @version 1.38.12
 	 *
 	 * @constructor
 	 * @public
