@@ -13,7 +13,7 @@ sap.ui.define(['jquery.sap.global'],
 	/**
 	 * MatrixLayout renderer.
 	 *
-	 * @author d029921
+	 * @author SAP SE
 	 * @namespace
 	 */
 	var MatrixLayoutRenderer = {

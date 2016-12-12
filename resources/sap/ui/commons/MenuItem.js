@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './MenuItemBase', './library', 'sap/ui/unifi
 	 * @extends sap.ui.unified.MenuItem
 	 *
 	 * @author SAP SE
-	 * @version 1.28.41
+	 * @version 1.28.42
 	 *
 	 * @constructor
 	 * @public
