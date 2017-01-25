@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2017 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -27,7 +27,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.38.16
+	 * @version 1.38.18
 	 *
 	 * @constructor
 	 * @public
@@ -111,6 +111,17 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 			select : {}
 		}
 	}});
+
+	RadioButton.prototype.init = function() {
+		this._changeGroupName(this.getGroupName());
+	};
+
+	RadioButton.prototype.exit = function() {
+		var sGroupName = this.getGroupName(),
+			aGroup = this._groupNames[sGroupName];
+
+		aGroup.splice(aGroup.indexOf(this), 1);
+	};
 
 	/**
 	 * Event handler called, when the RadioButton is clicked.
@@ -251,7 +262,6 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 			iLength = aControlsInGroup && aControlsInGroup.length;
 
 		this.setProperty("selected", bSelected, true); // No re-rendering
-		this._changeGroupName(this.getGroupName());
 
 		if (bSelected && sGroupName && sGroupName !== "") { // If this radio button is selected and groupName is set, explicitly deselect the other radio buttons of the same group
 			for (var i = 0; i < iLength; i++) {
@@ -271,6 +281,8 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	};
 
 	RadioButton.prototype.setGroupName = function(sGroupName) {
+		sGroupName = this.validateProperty("groupName", sGroupName);
+
 		this._changeGroupName(sGroupName, this.getGroupName());
 
 		return this.setProperty("groupName", sGroupName, false);
