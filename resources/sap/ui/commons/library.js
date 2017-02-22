@@ -20,14 +20,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 	 * @namespace
 	 * @name sap.ui.commons
 	 * @author SAP SE
-	 * @version 1.46.2
+	 * @version 1.46.3
 	 * @public
 	 */
 
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
 		name : "sap.ui.commons",
-		version: "1.46.2",
+		version: "1.46.3",
 		dependencies : ["sap.ui.core","sap.ui.layout","sap.ui.unified"],
 		types: [
 			"sap.ui.commons.ButtonStyle",
@@ -1238,7 +1238,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/DataType',
 				var oButton = new sap.ui.commons.Button();
 				return oButton;
 			},
-			addFormClass: function(){ return null; },
+			addFormClass: function(){ return "sapUiCFUM"; },
 			bFinal: false /* to allow mobile to overwrite  */
 		};
 	}
