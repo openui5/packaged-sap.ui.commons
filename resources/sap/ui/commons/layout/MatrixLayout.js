@@ -41,7 +41,7 @@ sap.ui.define(['jquery.sap.global', './MatrixLayoutCell', './MatrixLayoutRow', '
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.28.43
+	 * @version 1.28.44
 	 *
 	 * @constructor
 	 * @public

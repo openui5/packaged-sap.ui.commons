@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/layout/for
 	 * @extends sap.ui.layout.form.GridElementData
 	 *
 	 * @author SAP SE
-	 * @version 1.28.43
+	 * @version 1.28.44
 	 *
 	 * @constructor
 	 * @public
