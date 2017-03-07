@@ -5310,13 +5310,10 @@ html[data-sap-ui-browser^="ie"] .sapUiCb:focus:after {
   color: #666666;
   cursor: default;
 }
-.sapUiTfStd > .sapUiTfComboIcon:hover {
-  border-left: 1px solid #ffffff;
-  background-color: #7a5100;
-}
+.sapUiTfStd > .sapUiTfComboIcon:hover,
 .sapUiTfStd.sapUiTfFoc > .sapUiTfComboIcon {
   border-left: 1px solid #ffffff;
-  background-color: #0f5d94;
+  background-color: #7a5100;
 }
 /****************************************************************/
 /*                        HCB DATEPICKER                        */
