@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.46.5
+	 * @version 1.46.6
 	 *
 	 * @constructor
 	 * @public
@@ -1348,20 +1348,12 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		fBarWidth = this.getBarWidth();
 		bIsVertical = this.getVertical();
 
-		if (fNewValue >= fMax) {
+		if (fNewValue > fMax) {
 			fNewValue = fMax;
-			if (bIsVertical) {
-				iNewPos = 0;
-			} else {
-				iNewPos = fBarWidth;
-			}
-		} else if (fNewValue <= fMin) {
+			iNewPos = fBarWidth;
+		} else if (fNewValue < fMin) {
 			fNewValue = fMin;
-			if (bIsVertical) {
-				iNewPos = fBarWidth;
-			} else {
-				iNewPos = 0;
-			}
+			iNewPos = 0;
 		} else {
 			iNewPos = (( fNewValue - fMin ) / ( fMax - fMin )) * fBarWidth;
 		}
@@ -1374,7 +1366,6 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		this._lastValue = fNewValue;
 
 		return this;
-
 	};
 
 	/*
