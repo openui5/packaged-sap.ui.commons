@@ -24,7 +24,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @implements sap.ui.commons.ToolbarItem,sap.ui.commons.FormattedTextViewControl
 	 *
 	 * @author SAP SE
-	 * @version 1.28.45
+	 * @version 1.28.46
 	 *
 	 * @constructor
 	 * @public
