@@ -14,7 +14,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'sap/ui/core/ValueSt
 	 * TextField Renderer
 	 * @namespace
 	 * @author SAP
-	 * @version 1.38.27
+	 * @version 1.38.28
 	 * @since 0.9.0
 	 */
 	var TextFieldRenderer = {};
