@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', 'sap/ui/
 		 * @implements sap.ui.core.Toolbar
 		 *
 		 * @author SAP SE
-		 * @version 1.44.28
+		 * @version 1.44.29
 		 *
 		 * @constructor
 		 * @public
