@@ -1,5 +1,6 @@
 {
     "_sap_ui_commons_Button_Height": "18px",
+    "_sap_ui_commons_Dialog_HeaderHeight": "19px",
     "_sap_ui_commons_Dialog_FooterHeight": "36px",
     "_sap_ui_commons_ListBox_BorderRadius": "2px",
     "_sap_ui_commons_Panel_BorderRadius": "3px",
