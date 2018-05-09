@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/TooltipBase'],
 	 * @extends sap.ui.core.TooltipBase
 	 *
 	 * @author SAP SE
-	 * @version 1.52.11
+	 * @version 1.52.12
 	 *
 	 * @constructor
 	 * @public
