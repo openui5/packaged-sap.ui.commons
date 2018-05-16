@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/layout/for
 	 * @extends sap.ui.layout.form.ResponsiveLayout
 	 *
 	 * @author SAP SE
-	 * @version 1.38.35
+	 * @version 1.38.36
 	 *
 	 * @constructor
 	 * @public
