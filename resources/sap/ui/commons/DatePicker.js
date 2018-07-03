@@ -31,7 +31,7 @@ sap.ui.define([
 	 * @extends sap.ui.commons.TextField
 	 *
 	 * @author SAP SE
-	 * @version 1.56.2
+	 * @version 1.56.3
 	 *
 	 * @constructor
 	 * @public

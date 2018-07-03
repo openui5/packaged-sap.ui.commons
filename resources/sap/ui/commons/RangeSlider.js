@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Slider', './library', "./RangeSliderRende
 	 * @extends sap.ui.commons.Slider
 	 *
 	 * @author SAP SE
-	 * @version 1.56.2
+	 * @version 1.56.3
 	 *
 	 * @constructor
 	 * @public
