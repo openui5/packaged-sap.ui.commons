@@ -29,7 +29,7 @@ sap.ui.define([
 	 * @extends sap.ui.layout.form.GridLayout
 	 *
 	 * @author SAP SE
-	 * @version 1.56.4
+	 * @version 1.56.5
 	 *
 	 * @constructor
 	 * @public
