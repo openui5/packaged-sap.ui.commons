@@ -36,7 +36,7 @@ sap.ui.define([
 		 * @implements sap.ui.core.Toolbar
 		 *
 		 * @author SAP SE
-		 * @version 1.56.5
+		 * @version 1.56.6
 		 *
 		 * @constructor
 		 * @public
