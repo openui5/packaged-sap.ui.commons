@@ -25,7 +25,7 @@ sap.ui.define([
 	 * @class
 	 * Divides the screen in visual areas.
 	 * @extends sap.ui.core.Control
-	 * @version 1.58.0
+	 * @version 1.58.1
 	 *
 	 * @constructor
 	 * @public
