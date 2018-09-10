@@ -25,7 +25,7 @@ sap.ui.define([
 	 * @class
 	 * Provides navigation between pages within a list of numbered pages.
 	 * @extends sap.ui.core.Control
-	 * @version 1.58.1
+	 * @version 1.58.2
 	 *
 	 * @constructor
 	 * @public
