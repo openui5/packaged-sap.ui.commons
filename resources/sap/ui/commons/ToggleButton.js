@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Button', "./ToggleButtonRenderer"],
 	 * @extends sap.ui.commons.Button
 	 *
 	 * @author SAP SE
-	 * @version 1.58.2
+	 * @version 1.58.3
 	 *
 	 * @constructor
 	 * @public
