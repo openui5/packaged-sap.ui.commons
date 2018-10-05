@@ -20,7 +20,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control', "./TreeR
 	 * @class
 	 * Simple tree to display item in a hierarchical way
 	 * @extends sap.ui.core.Control
-	 * @version 1.56.11
+	 * @version 1.56.12
 	 *
 	 * @constructor
 	 * @public
