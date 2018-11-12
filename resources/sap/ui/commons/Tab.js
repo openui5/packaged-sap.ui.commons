@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './Panel', './library'],
 	 * @extends sap.ui.commons.Panel
 	 *
 	 * @author SAP SE
-	 * @version 1.56.14
+	 * @version 1.56.15
 	 *
 	 * @constructor
 	 * @public
