@@ -29,7 +29,7 @@ sap.ui.define([
 	 * @extends sap.ui.unified.Menu
 	 *
 	 * @author SAP SE
-	 * @version 1.56.15
+	 * @version 1.56.16
 	 * @since 1.0.0
 	 *
 	 * @constructor

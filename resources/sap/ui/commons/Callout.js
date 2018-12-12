@@ -22,7 +22,7 @@ sap.ui.define(['jquery.sap.global', './CalloutBase', './library', "./CalloutRend
 	 * @extends sap.ui.commons.CalloutBase
 	 *
 	 * @author SAP SE
-	 * @version 1.56.15
+	 * @version 1.56.16
 	 *
 	 * @constructor
 	 * @public
