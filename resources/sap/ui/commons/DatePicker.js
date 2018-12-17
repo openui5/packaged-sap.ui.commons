@@ -24,7 +24,7 @@ sap.ui.define(['jquery.sap.global', './TextField', 'sap/ui/model/type/Date', 'sa
 	 * @extends sap.ui.commons.TextField
 	 *
 	 * @author SAP SE
-	 * @version 1.52.22
+	 * @version 1.52.23
 	 *
 	 * @constructor
 	 * @public
