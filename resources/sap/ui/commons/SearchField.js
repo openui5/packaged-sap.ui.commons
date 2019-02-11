@@ -5,8 +5,33 @@
  */
 
 // Provides control sap.ui.commons.SearchField.
-sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListBox', './TextField', './TextFieldRenderer', './library', 'sap/ui/core/Control', 'sap/ui/core/History', 'sap/ui/core/Renderer', 'jquery.sap.dom'],
-	function(jQuery, ComboBox, ComboBoxRenderer, ListBox, TextField, TextFieldRenderer, library, Control, History, Renderer/*, DOM*/) {
+sap.ui.define([
+    'jquery.sap.global',
+    './ComboBox',
+    './ComboBoxRenderer',
+    './ListBox',
+    './TextField',
+    './TextFieldRenderer',
+    './library',
+    'sap/ui/core/Control',
+    'sap/ui/core/History',
+    'sap/ui/core/Renderer',
+    "./SearchFieldRenderer",
+    'jquery.sap.dom'
+],
+	function(
+	    jQuery,
+		ComboBox,
+		ComboBoxRenderer,
+		ListBox,
+		TextField,
+		TextFieldRenderer,
+		library,
+		Control,
+		History,
+		Renderer/*, DOM*/,
+		SearchFieldRenderer
+	) {
 	"use strict";
 
 
@@ -23,7 +48,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.52.24
+	 * @version 1.52.25
 	 *
 	 * @constructor
 	 * @public
@@ -593,7 +618,7 @@ sap.ui.define(['jquery.sap.global', './ComboBox', './ComboBoxRenderer', './ListB
 
 
 	var isMobile = function() {
-		return sap.ui.Device.browser.mobile;
+		return sap.ui.Device.browser.mobile && !sap.ui.Device.system.desktop;
 	};
 
 
