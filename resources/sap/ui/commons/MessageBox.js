@@ -31,7 +31,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/library', 'sap/ui/core/ElementM
 		 *
 		 * @namespace
 		 * @author SAP SE
-		 * @version 1.52.30
+		 * @version 1.52.31
 		 * @public
 		 * @since 0.8.8
 		 * @deprecated Since version 1.38. Instead, use the <code>sap.m.MessageBox</code> control.
