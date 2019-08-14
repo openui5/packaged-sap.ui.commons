@@ -48,7 +48,7 @@ sap.ui.define([
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.44.41
+	 * @version 1.44.42
 	 *
 	 * @constructor
 	 * @public
