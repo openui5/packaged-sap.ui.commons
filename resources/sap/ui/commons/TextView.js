@@ -21,7 +21,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/Control'],
 	 * @implements sap.ui.commons.ToolbarItem, sap.ui.core.IFormContent
 	 *
 	 * @author SAP SE
-	 * @version 1.52.36
+	 * @version 1.52.37
 	 *
 	 * @constructor
 	 * @public
