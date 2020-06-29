@@ -24,7 +24,7 @@ sap.ui.define(['jquery.sap.global', './TextField', './library', 'sap/ui/core/Pop
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.38.45
+	 * @version 1.38.46
 	 *
 	 * @constructor
 	 * @public

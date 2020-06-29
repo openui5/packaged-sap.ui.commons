@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/commons/library', 'sap/ui/core/Custo
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.38.45
+	 * @version 1.38.46
 	 *
 	 * @constructor
 	 * @public
