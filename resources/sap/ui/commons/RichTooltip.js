@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2020 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -23,7 +23,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/TooltipBase'],
 	 * @extends sap.ui.core.TooltipBase
 	 *
 	 * @author SAP SE
-	 * @version 1.44.44
+	 * @version 1.44.46
 	 *
 	 * @constructor
 	 * @public
@@ -146,7 +146,7 @@ sap.ui.define(['jquery.sap.global', './library', 'sap/ui/core/TooltipBase'],
 	RichTooltip.prototype.setText = function(sText) {
 		if (!!sText) {
 			//replace carriage returns etc. with br tag
-			sText = sText.replace(/(\r\n|\n|\r)/g,"<br />");
+			sText = sText.replace(/(\r\n|\n|\r)/g,"<br>");
 		}
 
 		var oText = this.getAggregation("formattedText");

@@ -1,6 +1,6 @@
 /*!
  * UI development toolkit for HTML5 (OpenUI5)
- * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * (c) Copyright 2009-2020 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -83,7 +83,7 @@ sap.ui.define(['jquery.sap.global'],
 		rm.writeAttribute("class", "sapUiRatingItmImg");
 		var sIcon = RatingIndicatorRenderer.getThemeSymbol("selected", oRating);
 		rm.writeAttributeEscaped("src", sIcon);
-		rm.write("/>");
+		rm.write(">");
 
 		rm.write("<div");
 		rm.writeAttribute("class", "sapUiRatingItmOvrflw");
@@ -119,7 +119,7 @@ sap.ui.define(['jquery.sap.global'],
 		rm.writeAttribute("class", "sapUiRatingItmOvrflwImg");
 		sIcon = RatingIndicatorRenderer.getThemeSymbol("unselected", oRating);
 		rm.writeAttributeEscaped("src", sIcon);
-		rm.write("/>");
+		rm.write(">");
 
 		rm.write("</div>");
 		rm.write("</div>");
