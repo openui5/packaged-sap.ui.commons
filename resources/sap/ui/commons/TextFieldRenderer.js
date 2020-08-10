@@ -14,7 +14,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'sap/ui/core/ValueSt
 	 * TextField Renderer
 	 * @namespace
 	 * @author SAP
-	 * @version 1.52.42
+	 * @version 1.52.43
 	 * @since 0.9.0
 	 */
 	var TextFieldRenderer = {};
@@ -180,7 +180,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/Renderer', 'sap/ui/core/ValueSt
 				rm.writeEscaped(oTextField.getValue());
 			}
 			rm.write("\"");
-			rm.write("/>");
+			rm.write(">");
 		}
 
 		if (this.getInnerTagName) {

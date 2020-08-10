@@ -111,7 +111,7 @@ sap.ui.define(['jquery.sap.global', './Button', './Paginator', './Toolbar'],
 	//	if(oTitle.getIcon()!==null) {
 	//		oRenderManager.write("<img");
 	//		oRenderManager.writeAttributeEscaped("src", oTitle.getIcon());
-	//		oRenderManager.write("/>");
+	//		oRenderManager.write(">");
 	//	}
 	//
 	//	// render the text if provided
@@ -138,7 +138,7 @@ sap.ui.define(['jquery.sap.global', './Button', './Paginator', './Toolbar'],
 			if (oTitle.getIcon()) {
 				oRenderManager.write("<img");
 				oRenderManager.writeAttributeEscaped("src", oTitle.getIcon());
-				oRenderManager.write("/>");
+				oRenderManager.write(">");
 			}
 			// closing DIV
 			oRenderManager.write("</div>");

@@ -48,7 +48,7 @@ sap.ui.define(['jquery.sap.global'],
 				rm.addClass("sapUiCommonsHoriDivHeightM");
 		}
 		rm.writeClasses();
-		rm.write("/>");
+		rm.write(">");
 	};
 
 

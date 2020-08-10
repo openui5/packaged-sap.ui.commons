@@ -48,7 +48,7 @@ sap.ui.define([
 	 * @implements sap.ui.commons.ToolbarItem
 	 *
 	 * @author SAP SE
-	 * @version 1.52.42
+	 * @version 1.52.43
 	 *
 	 * @constructor
 	 * @public
@@ -1007,7 +1007,7 @@ sap.ui.define([
 					}
 					oRM.addClass("sapUiSearchFieldProvIco");
 					oRM.writeClasses();
-					oRM.write("><img src=\"" + oCtrl.getParent().getSearchProvider().getIcon() + "\"/></div>");
+					oRM.write("><img src=\"" + oCtrl.getParent().getSearchProvider().getIcon() + "\"></div>");
 				}
 			},
 

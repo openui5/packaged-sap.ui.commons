@@ -69,7 +69,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 						+ sValueStateImage);
 					rm.write('<img id="' + sId + '-valueStateImage" class="sapUiRttValueStateImage" src="');
 					rm.writeEscaped(sValueStateImage);
-					rm.write('"/>');
+					rm.write('">');
 				}
 			}
 
@@ -96,7 +96,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/ValueStateSupport'],
 			rm.write('<img id="' + sId + '-image" class="sapUiRttImage"');
 			rm.writeAttributeEscaped('alt', sAltText);
 			rm.writeAttributeEscaped('src', sImage);
-			rm.write('"/>');
+			rm.write('>');
 		}
 
 		// render RichTooltip's text
